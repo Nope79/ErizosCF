@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ErizosCF.Views.AlumnosPage"
+             xmlns:viewmodels="clr-namespace:ErizosCF.ViewModels"
+             x:DataType="viewmodels:AlumnosViewModel"
+             Title="AlumnosPage">
+
+    <VerticalStackLayout Padding="10" Spacing="10">
+        <SearchBar Placeholder="Buscar alumno..."/>
+
+        <CollectionView x:Name="AlumnosCollection"
+                        SelectionMode="Single"
+                        SelectionChanged="OnAlumnoSeleccionado">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BorderColor="LightGray" Padding="10" Margin="5">
+                        <HorizontalStackLayout>
+                            <Label Text="{Binding Nombre}" FontAttributes="Bold" FontSize="16" />
+                            <Label Text=" - " />
+                            <Label Text="{Binding Handle}" FontSize="16" />
+                            <Label Text=" | Rating: " />
+                            <Label Text="{Binding CurrentRating}" FontSize="16" />
+                        </HorizontalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>

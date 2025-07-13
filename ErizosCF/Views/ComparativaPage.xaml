@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ErizosCF.Views.ComparativaPage"
+             xmlns:viewmodels="clr-namespace:ErizosCF.ViewModels"
+             x:DataType="viewmodels:ComparativaViewModel"
+             Title="ComparativaPage">
+
+    <Grid ColumnDefinitions="*, 300" RowDefinitions="Auto, *, Auto" Padding="10" ColumnSpacing="15">
+
+        <!-- Título -->
+        <Label Text="Comparativa de Alumnos" 
+               FontSize="20" FontAttributes="Bold"
+               Grid.ColumnSpan="2" Margin="0,0,0,10"/>
+
+        <!-- Lista de alumnos (columna izquierda) -->
+        <Frame Grid.Row="1" Grid.Column="0" Padding="0" CornerRadius="10">
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Selecciona alumnos para comparar:" FontSize="16"/>
+
+                <SearchBar Placeholder="Buscar alumnos..." 
+                           Text="{Binding SearchTerm}"
+                           SearchCommand="{Binding SearchCommand}"/>
+
+                <CollectionView x:Name="AlumnosMultiSelect"
+                                SelectionMode="Multiple"
+                                ItemsSource="{Binding Alumnos}"
+                                SelectedItems="{Binding SelectedAlumnos}"
+                                HeightRequest="400">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Padding="10" ColumnDefinitions="Auto, *">
+                                <CheckBox IsChecked="{Binding IsSelected}" 
+                                          VerticalOptions="Center"/>
+                                <Label Text="{Binding Nombre}" 
+                                       Grid.Column="1" 
+                                       VerticalOptions="Center"
+                                       FontSize="16"/>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <Button Text="Comparar rendimiento" 
+                        Command="{Binding CompareCommand}"
+                        HorizontalOptions="End"
+                        Padding="20,5"/>
+            </VerticalStackLayout>
+        </Frame>
+
+        <!-- Panel de escuelas (columna derecha) -->
+        <Frame Grid.Row="1" Grid.Column="1" Padding="10" CornerRadius="10">
+            <VerticalStackLayout Spacing="15">
+                <Label Text="Filtrar por escuela:" FontSize="16" FontAttributes="Bold"/>
+
+                <!-- Lista de escuelas con checkboxes -->
+                <CollectionView ItemsSource="{Binding Escuelas}"
+                                SelectionMode="Single"
+                                SelectedItem="{Binding EscuelaSeleccionada}"
+                                HeightRequest="250">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid ColumnDefinitions="*, Auto">
+                                <!-- Label editable al hacer tap -->
+                                <Label Text="{Binding Nombre}" 
+                                       FontSize="14"
+                                       VerticalOptions="Center">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer 
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:ComparativaViewModel}}, Path=EditEscuelaCommand}"
+                                            CommandParameter="{Binding .}"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+
+                                <CheckBox IsChecked="{Binding IsSelected}" 
+                                          Grid.Column="1"
+                                          VerticalOptions="Center"/>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <!-- CRUD de escuelas -->
+                <Frame Padding="10" CornerRadius="5">
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="Gestión de escuelas:" FontSize="14" FontAttributes="Bold"/>
+
+                        <Entry Text="{Binding NuevaEscuelaNombre}" 
+                               Placeholder="Nombre de escuela"
+                               IsVisible="{Binding MostrarEditorEscuela}"/>
+
+                        <Grid ColumnDefinitions="*, *" ColumnSpacing="5">
+                            <Button Text="Nueva" 
+                                    Command="{Binding AddEscuelaCommand}"
+                                    IsVisible="{Binding MostrarBotonNuevo}"/>
+
+                            <Button Text="Guardar" 
+                                    Command="{Binding SaveEscuelaCommand}"
+                                    Grid.Column="0"
+                                    IsVisible="{Binding MostrarBotonGuardar}"/>
+
+                            <Button Text="Cancelar" 
+                                    Command="{Binding CancelEditEscuelaCommand}"
+                                    Grid.Column="1"
+                                    IsVisible="{Binding MostrarBotonGuardar}"/>
+
+                            <Button Text="Eliminar" 
+                                    Command="{Binding DeleteEscuelaCommand}"
+                                    Grid.Column="1"
+                                    BackgroundColor="LightPink"
+                                    IsVisible="{Binding MostrarBotonEliminar}"/>
+                        </Grid>
+                    </VerticalStackLayout>
+                </Frame>
+            </VerticalStackLayout>
+        </Frame>
+
+        <!-- Resultados de comparación -->
+        <Frame Grid.Row="2" Grid.ColumnSpan="2" Padding="10" CornerRadius="10" Margin="0,15,0,0">
+            <VerticalStackLayout>
+                <Label Text="Resultados de comparación:" FontSize="16" FontAttributes="Bold"/>
+
+                <ScrollView>
+                    <VerticalStackLayout x:Name="ResultadosComparativa" 
+                                         BindableLayout.ItemsSource="{Binding Resultados}">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <Frame Padding="10" Margin="0,5">
+                                    <Label Text="{Binding .}" FontSize="14"/>
+                                </Frame>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </VerticalStackLayout>
+                </ScrollView>
+            </VerticalStackLayout>
+        </Frame>
+    </Grid>
+    
+</ContentPage>

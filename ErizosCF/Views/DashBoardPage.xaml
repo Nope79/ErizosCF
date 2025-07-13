@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ErizosCF.Views.DashBoardPage"
+             xmlns:viewmodels="clr-namespace:ErizosCF.ViewModels"
+             xmlns:models="clr-namespace:ErizosCF.Models"
+             x:DataType="viewmodels:DashBoardViewModel"
+             Title="ICPC - ErizosCF">
+    <Grid ColumnDefinitions="*, 300" RowDefinitions="Auto, Auto, *, Auto" Padding="15" ColumnSpacing="20">
+
+        <!-- Estadísticas rápidas -->
+        <Frame Grid.Row="1" Grid.ColumnSpan="2" Padding="5" CornerRadius="10">
+            <Grid ColumnDefinitions="*, *, *">
+                <VerticalStackLayout Spacing="5" HorizontalOptions="Center">
+                    <Label Text="{Binding TotalAlumnos}" FontSize="28" FontAttributes="Bold" HorizontalOptions="Center"/>
+                    <Label Text="Alumnos registrados" FontSize="14" HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Column="1" Spacing="5" HorizontalOptions="Center">
+                    <Label Text="{Binding AlumnosActivosSemana}" FontSize="28" FontAttributes="Bold" HorizontalOptions="Center"/>
+                    <Label Text="Activos esta semana" FontSize="14" HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Column="2" Spacing="5" HorizontalOptions="Center">
+                    <Label Text="{Binding ProblemasSemana}" FontSize="28" FontAttributes="Bold" HorizontalOptions="Center"/>
+                    <Label Text="Problemas resueltos" FontSize="14" HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+            </Grid>
+        </Frame>
+
+        <!-- Lista de alumnos -->
+        <Frame Grid.Row="2" Grid.Column="0" Padding="0" CornerRadius="10">
+            <Grid RowDefinitions="Auto, Auto, *">
+                <Label Text="Alumnos" FontSize="18" FontAttributes="Bold" Margin="0,0,0,10"/>
+
+                <SearchBar Grid.Row="1" Placeholder="Buscar alumnos..." 
+                      Text="{Binding SearchTerm}"
+                      SearchCommand="{Binding SearchCommand}"/>
+
+                <!-- ScrollView para la lista de alumnos -->
+                <ScrollView Grid.Row="2">
+                    <RefreshView IsRefreshing="{Binding IsRefreshing}" Command="{Binding RefreshCommand}">
+                        <CollectionView ItemsSource="{Binding AlumnosFiltrados}" 
+                                  SelectionMode="None"
+                                  VerticalOptions="Start">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Frame Padding="12" Margin="0,0,0,8" HeightRequest="70">
+                                        <!-- Diseño de item de alumno -->
+                                        <Grid ColumnDefinitions="Auto, *, Auto" RowDefinitions="Auto, Auto">
+                                            <Label Text="{Binding Handle}" FontSize="16" FontAttributes="Bold"/>
+                                            <Label Text="{Binding FirstName}" Grid.Column="1" FontSize="14"/>
+                                            <Label Text="{Binding LastName}" Grid.Column="1" Grid.Row="1" FontSize="14"/>
+
+                                            <StackLayout Grid.Column="2" Grid.RowSpan="2" Orientation="Horizontal" Spacing="5">
+                                                <Label Text="{Binding CurrentRating}" 
+                                                   FontSize="16" 
+                                                   TextColor="{Binding CurrentRating, Converter={StaticResource RatingToColorConverter}}"/>
+                                                <Label Text="→" FontSize="16"/>
+                                                <Label Text="{Binding MaxRating}" 
+                                                   FontSize="16"
+                                                   TextColor="{Binding MaxRating, Converter={StaticResource RatingToColorConverter}}"/>
+                                            </StackLayout>
+                                        </Grid>
+                                    </Frame>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </RefreshView>
+                </ScrollView>
+            </Grid>
+        </Frame>
+
+        <Frame Grid.Row="2" Grid.Column="1" Padding="10" CornerRadius="10" BackgroundColor="#1E1E1E">
+            <VerticalStackLayout Spacing="15">
+                <!-- Título -->
+                <Label Text="Escuelas" FontSize="18" FontAttributes="Bold" TextColor="White"/>
+
+                <!-- Lista de escuelas -->
+                <CollectionView ItemsSource="{Binding Escuelas}"
+                   EmptyView="No hay escuelas registradas"
+                   SelectionMode="Single"
+                   SelectedItem="{Binding EscuelaSeleccionada}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="models:Escuela">
+                            <Frame Padding="10" Margin="5">
+                                <Grid ColumnDefinitions="*, Auto">
+                                    <Label Text="{Binding NombreEscuela}" 
+                               FontSize="16"
+                               FontAttributes="Bold"/>
+                                    <CheckBox IsChecked="{Binding Seleccionada, Mode=TwoWay}"
+                                      Grid.Column="1"
+                                      Color="LightGreen"
+                                      VerticalOptions="Center"
+                                      CheckedChanged="OnCheckboxChanged"/>
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <!-- Panel de CRUD -->
+                <Frame Padding="10" CornerRadius="5" BackgroundColor="#252525">
+                    <VerticalStackLayout Spacing="10">
+                        <Button Command="{Binding AddEscuelaCommand}" 
+                    Text="Añadir Escuela" 
+                    BackgroundColor="#512BD4"
+                    TextColor="White"/>
+
+                        <Button Command="{Binding UpdateEscuelaCommand}" 
+                    Text="Editar" 
+                    BackgroundColor="#2E7D32"
+                    TextColor="White"
+                    IsVisible="{Binding MostrarBotonGuardar}"/>
+
+                        <Button Command="{Binding DeleteEscuelaCommand}" 
+                    Text="Eliminar" 
+                    BackgroundColor="#C62828"
+                    TextColor="White"
+                    IsVisible="{Binding MostrarBotonEliminar}"/>
+                    </VerticalStackLayout>
+                </Frame>
+                <Button
+                    Text="Buscar"
+                    TextColor="White"
+                    BackgroundColor="Purple"
+                    Command="{Binding FiltroEscuelaCommand}"/>
+            </VerticalStackLayout>
+        </Frame>
+
+        <!-- Gráficos/Estadísticas -->
+        <Frame Grid.Row="3" Grid.ColumnSpan="2" Padding="10" CornerRadius="10" Margin="0,15,0,0">
+            <VerticalStackLayout>
+                <Label Text="Estadísticas de rendimiento" FontSize="18" FontAttributes="Bold"/>
+                <!-- Aquí podrías añadir gráficos usando Microcharts o similar -->
+                <Label Text="Gráficos de progreso semanal (pendiente implementar)" FontSize="14" FontAttributes="Italic"/>
+            </VerticalStackLayout>
+        </Frame>
+    </Grid>
+</ContentPage>
