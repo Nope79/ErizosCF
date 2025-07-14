@@ -8,5 +8,6 @@
         public string Index { get; set; }
         public string Verdict { get; set; }
         public DateTime Date { get; set; }
+        public int Rating { get; set; }
     }
 }

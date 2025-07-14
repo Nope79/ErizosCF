@@ -7,44 +7,12 @@
       "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\viewmodels\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\models\\userprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\models\\userprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\models\\userstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\models\\userstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\views\\dashboardpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\views\\dashboardpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\views\\dashboardpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\views\\dashboardpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\services\\dbservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\services\\dbservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\services\\cfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\services\\cfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\models\\problemstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\models\\problemstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\models\\escuela.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\models\\escuela.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\models\\conteststats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\models\\conteststats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\services\\escuelaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\services\\escuelaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\views\\dashboardpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\views\\dashboardpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,145 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ProblemStats.cs",
-              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Models\\ProblemStats.cs",
-              "RelativeDocumentMoniker": "ErizosCF\\Models\\ProblemStats.cs",
-              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Models\\ProblemStats.cs",
-              "RelativeToolTip": "ErizosCF\\Models\\ProblemStats.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T00:23:53.472Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ContestStats.cs",
-              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Models\\ContestStats.cs",
-              "RelativeDocumentMoniker": "ErizosCF\\Models\\ContestStats.cs",
-              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Models\\ContestStats.cs",
-              "RelativeToolTip": "ErizosCF\\Models\\ContestStats.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T00:23:19.884Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserStats.cs",
-              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Models\\UserStats.cs",
-              "RelativeDocumentMoniker": "ErizosCF\\Models\\UserStats.cs",
-              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Models\\UserStats.cs",
-              "RelativeToolTip": "ErizosCF\\Models\\UserStats.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T00:12:43.892Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UserProfile.cs",
-              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Models\\UserProfile.cs",
-              "RelativeDocumentMoniker": "ErizosCF\\Models\\UserProfile.cs",
-              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Models\\UserProfile.cs",
-              "RelativeToolTip": "ErizosCF\\Models\\UserProfile.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAAwAwAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T00:12:37.453Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DBServices.cs",
-              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Services\\DBServices.cs",
-              "RelativeDocumentMoniker": "ErizosCF\\Services\\DBServices.cs",
-              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Services\\DBServices.cs",
-              "RelativeToolTip": "ErizosCF\\Services\\DBServices.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAiwD4AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T22:14:16.714Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CFService.cs",
-              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Services\\CFService.cs",
-              "RelativeDocumentMoniker": "ErizosCF\\Services\\CFService.cs",
-              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Services\\CFService.cs",
-              "RelativeToolTip": "ErizosCF\\Services\\CFService.cs",
-              "ViewState": "AgIAAFQAAAAAAAAAAAA+wHQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T21:12:40.331Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Escuela.cs",
-              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Models\\Escuela.cs",
-              "RelativeDocumentMoniker": "ErizosCF\\Models\\Escuela.cs",
-              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Models\\Escuela.cs",
-              "RelativeToolTip": "ErizosCF\\Models\\Escuela.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T03:50:02.252Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "EscuelaService.cs",
-              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Services\\EscuelaService.cs",
-              "RelativeDocumentMoniker": "ErizosCF\\Services\\EscuelaService.cs",
-              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Services\\EscuelaService.cs",
-              "RelativeToolTip": "ErizosCF\\Services\\EscuelaService.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAuwC0AAABEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T04:02:20.32Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DashBoardPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Views\\DashBoardPage.xaml.cs",
-              "RelativeDocumentMoniker": "ErizosCF\\Views\\DashBoardPage.xaml.cs",
-              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Views\\DashBoardPage.xaml.cs",
-              "RelativeToolTip": "ErizosCF\\Views\\DashBoardPage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T23:21:37.527Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DashBoardPage.xaml",
-              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Views\\DashBoardPage.xaml",
-              "RelativeDocumentMoniker": "ErizosCF\\Views\\DashBoardPage.xaml",
-              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Views\\DashBoardPage.xaml",
-              "RelativeToolTip": "ErizosCF\\Views\\DashBoardPage.xaml",
-              "ViewState": "AgIAAG0AAAAAAAAAAAAqwIsAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-07-02T23:16:22.116Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "DashBoardViewModel.cs",
               "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\ViewModels\\DashBoardViewModel.cs",
               "RelativeDocumentMoniker": "ErizosCF\\ViewModels\\DashBoardViewModel.cs",
-              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\ViewModels\\DashBoardViewModel.cs",
-              "RelativeToolTip": "ErizosCF\\ViewModels\\DashBoardViewModel.cs",
-              "ViewState": "AgIAALIAAAAAAAAAAAAqwNEAAAABAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\ViewModels\\DashBoardViewModel.cs*",
+              "RelativeToolTip": "ErizosCF\\ViewModels\\DashBoardViewModel.cs*",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwCUAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T23:17:53.923Z",
+              "WhenOpened": "2025-07-14T17:55:36.684Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DashBoardPage.xaml",
+              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Views\\DashBoardPage.xaml",
+              "RelativeDocumentMoniker": "ErizosCF\\Views\\DashBoardPage.xaml",
+              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Views\\DashBoardPage.xaml",
+              "RelativeToolTip": "ErizosCF\\Views\\DashBoardPage.xaml",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAA4AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-07-14T17:55:31.736Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DashBoardPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Views\\DashBoardPage.xaml.cs",
+              "RelativeDocumentMoniker": "ErizosCF\\Views\\DashBoardPage.xaml.cs",
+              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Views\\DashBoardPage.xaml.cs",
+              "RelativeToolTip": "ErizosCF\\Views\\DashBoardPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-14T17:55:28.155Z",
               "EditorCaption": ""
             }
           ]

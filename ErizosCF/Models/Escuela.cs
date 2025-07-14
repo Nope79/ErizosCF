@@ -10,12 +10,13 @@ namespace ErizosCF.Models
 
         [ObservableProperty]
         private bool _seleccionada = true;
+        public int Id;
 
         partial void OnSeleccionadaChanged(bool value)
         {
             if (Application.Current?.MainPage?.BindingContext is DashBoardViewModel vm)
             {
-                vm.GuardarCambiosCommand?.Execute(null);
+                //vm.GuardarCambiosCommand?.Execute(null);
             }
         }
 

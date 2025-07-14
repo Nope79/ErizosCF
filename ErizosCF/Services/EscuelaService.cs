@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Text.Json;
+using ErizosCF.Services;
 public class EscuelaService
 {
 
@@ -44,6 +45,61 @@ public class EscuelaService
         catch (Exception ex)
         {
             Debug.WriteLine($"Error saving escuelas: {ex.Message}");
+        }
+    }
+
+    private readonly DbService _dbService = new DbService();
+
+    public List<Escuela> ObtenerTodas()
+    {
+        try
+        {
+            _dbService.OpenConnectionAsync();
+            // Implementar consulta SQL para obtener todas las escuelas
+            return new List<Escuela>(); // Datos reales de DB
+        }
+        finally
+        {
+            _dbService.CloseConnection();
+        }
+    }
+
+    public void Agregar(Escuela escuela)
+    {
+        try
+        {
+            _dbService.OpenConnectionAsync();
+            // Implementar INSERT en la base de datos
+        }
+        finally
+        {
+            _dbService.CloseConnection();
+        }
+    }
+
+    public void Actualizar(int id, string nuevoNombre)
+    {
+        try
+        {
+            _dbService.OpenConnectionAsync();
+            // Implementar UPDATE en la base de datos
+        }
+        finally
+        {
+            _dbService.CloseConnection();
+        }
+    }
+
+    public void Eliminar(int id)
+    {
+        try
+        {
+            _dbService.OpenConnectionAsync();
+            // Implementar DELETE en la base de datos
+        }
+        finally
+        {
+            _dbService.CloseConnection();
         }
     }
 }
