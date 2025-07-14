@@ -15,14 +15,24 @@ namespace ErizosCF.ViewModels
         [ObservableProperty]
         private ObservableCollection<UserProfile> _usuariosResumen = new();
 
+        [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(EncabezadosHabilitados))] 
+        private bool _datosCargados;
+
+        public bool EncabezadosHabilitados => DatosCargados;
+
         public DashBoardViewModel()
         {
             _cfService = new CFService();
         }
 
+
+
         [RelayCommand]
         private async Task CargarResumenUsuarios()
         {
+            DatosCargados = false;
+
             try
             {
                 var alumnosDB = await UserProfile.ObtenerTodosAsync();
@@ -43,11 +53,13 @@ namespace ErizosCF.ViewModels
                     alumno.ActualizarDatosCodeforces(user, problemas);
                     UsuariosResumen.Add(alumno);
                     Debug.WriteLine($"Agregado: {alumno.Handle} - {alumno.FullName} - {alumno.CurrentRating}");
+                    DatosCargados = true;
                 }
             }
             catch (Exception ex)
             {
                 Debug.WriteLine($"Error al cargar usuarios: {ex.Message}");
+                DatosCargados = false;
             }
         }
     }

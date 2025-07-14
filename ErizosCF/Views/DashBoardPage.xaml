@@ -2,103 +2,108 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodels="clr-namespace:ErizosCF.ViewModels"
-             x:Class="ErizosCF.Views.DashBoardPage">
+             x:Class="ErizosCF.Views.DashBoardPage"
+             Title="Dashboard">
 
     <ContentPage.BindingContext>
         <viewmodels:DashBoardViewModel />
     </ContentPage.BindingContext>
 
-    <ScrollView Orientation="Vertical">
-        <ScrollView Orientation="Horizontal">
+    <Grid RowDefinitions="Auto,Auto,*">
+        <!-- Botón Cargar Datos -->
+        <Button Text="Cargar Datos" 
+                Command="{Binding CargarResumenUsuariosCommand}"
+                Grid.Row="0"/>
 
-            <VerticalStackLayout>
+        <!-- Encabezados Fijos (con su propio ScrollView) -->
+        <ScrollView x:Name="HeaderScrollView"
+                    Orientation="Horizontal"
+                    IsEnabled="{Binding EncabezadosHabilitados}" 
+                    HorizontalScrollBarVisibility="Never"
+                    Scrolled="OnHeaderScrollViewScrolled"
+                    Grid.Row="1">       
+            <Grid ColumnDefinitions="200,260,50,100,100,60,
+                                     50,50,50,50,50,50,
+                                     50,50,50,50,50,50,
+                                     50,50,50,50,50,50"
+                  HorizontalOptions="Start"
+                  Padding="50,10,50,10">
 
-                <Button Text="Cargar Datos" 
-    Command="{Binding CargarResumenUsuariosCommand}" />
+                <Label Text="Usuario" FontAttributes="Bold" Grid.Column="0" HorizontalOptions="Start"/>
+                <Label Text="Nombre Completo" FontAttributes="Bold" Grid.Column="1" HorizontalOptions="Start"/>
+                <Label Text="Curso" FontAttributes="Bold" Grid.Column="2" HorizontalOptions="Start"/>
+                <Label Text="Escuela" FontAttributes="Bold" Grid.Column="3" HorizontalOptions="Start"/>
+                <Label Text="Rating" FontAttributes="Bold" Grid.Column="4" HorizontalOptions="Center"/>
+                <Label Text="Solved" FontAttributes="Bold" Grid.Column="5" HorizontalOptions="Center"/>
 
-                <Grid RowDefinitions="Auto, *"
-    
-                      ColumnDefinitions="200,260,50,100,100,60,
-                                         50,50,50,50,50,50,
-                                         50,50,50,50,50,50,
-                                         50,50,50,50,50,50"
-                      RowSpacing="10"
-                      Margin="0,10"
-                      HorizontalOptions="Center"
-                      Padding="50,30,50,90">
-
-                    <Label Text="Usuario" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" HorizontalOptions="Start"/>
-                    <Label Text="Nombre Completo" FontAttributes="Bold" Grid.Row="0" Grid.Column="1" HorizontalOptions="Start"/>
-                    <Label Text="Curso" FontAttributes="Bold" Grid.Row="0" Grid.Column="2" HorizontalOptions="Start"/>
-                    <Label Text="Escuela" FontAttributes="Bold" Grid.Row="0" Grid.Column="3" HorizontalOptions="Start"/>
-                    <Label Text="Rating" FontAttributes="Bold" Grid.Row="0" Grid.Column="4" HorizontalOptions="Center"/>
-                    <Label Text="Solved" FontAttributes="Bold" Grid.Row="0" Grid.Column="5" HorizontalOptions="Center"/>
-
-                    <Label Text="800" FontAttributes="Bold" Grid.Row="0" Grid.Column="6" HorizontalOptions="Center"/>
-                    <Label Text="900" FontAttributes="Bold" Grid.Row="0" Grid.Column="7" HorizontalOptions="Center"/>
-                    <Label Text="1000" FontAttributes="Bold" Grid.Row="0" Grid.Column="8" HorizontalOptions="Center"/>
-                    <Label Text="1100" FontAttributes="Bold" Grid.Row="0" Grid.Column="9" HorizontalOptions="Center"/>
-                    <Label Text="1200" FontAttributes="Bold" Grid.Row="0" Grid.Column="10" HorizontalOptions="Center"/>
-                    <Label Text="1300" FontAttributes="Bold" Grid.Row="0" Grid.Column="11" HorizontalOptions="Center"/>
-                    <Label Text="1400" FontAttributes="Bold" Grid.Row="0" Grid.Column="12" HorizontalOptions="Center"/>
-                    <Label Text="1500" FontAttributes="Bold" Grid.Row="0" Grid.Column="13" HorizontalOptions="Center"/>
-                    <Label Text="1600" FontAttributes="Bold" Grid.Row="0" Grid.Column="14" HorizontalOptions="Center"/>
-                    <Label Text="1700" FontAttributes="Bold" Grid.Row="0" Grid.Column="15" HorizontalOptions="Center"/>
-                    <Label Text="1800" FontAttributes="Bold" Grid.Row="0" Grid.Column="16" HorizontalOptions="Center"/>
-                    <Label Text="1900" FontAttributes="Bold" Grid.Row="0" Grid.Column="17" HorizontalOptions="Center"/>
-                    <Label Text="2000" FontAttributes="Bold" Grid.Row="0" Grid.Column="18" HorizontalOptions="Center"/>
-                    <Label Text="2100" FontAttributes="Bold" Grid.Row="0" Grid.Column="19" HorizontalOptions="Center"/>
-                    <Label Text="2200" FontAttributes="Bold" Grid.Row="0" Grid.Column="20" HorizontalOptions="Center"/>
-                    <Label Text="2300" FontAttributes="Bold" Grid.Row="0" Grid.Column="21" HorizontalOptions="Center"/>
-                    <Label Text="2400" FontAttributes="Bold" Grid.Row="0" Grid.Column="22" HorizontalOptions="Center"/>
-                    <Label Text="2500" FontAttributes="Bold" Grid.Row="0" Grid.Column="23" HorizontalOptions="Center"/>
-
-                    <CollectionView ItemsSource="{Binding UsuariosResumen}" Grid.Row="1" Grid.ColumnSpan="24">
-                        <CollectionView.ItemsLayout>
-                            <LinearItemsLayout Orientation="Vertical" />
-                        </CollectionView.ItemsLayout>
-
-                        <CollectionView.ItemTemplate>
-                            <DataTemplate>
-                                <Grid ColumnDefinitions="200,260,50,100,100,60,
-                                                         50,50,50,50,50,50,
-                                                         50,50,50,50,50,50,
-                                                         50,50,50,50,50,50"
-                                      HorizontalOptions="Center"
-                                      Padding="0,10,0,0">
-
-                                    <Label Text="{Binding Handle}" Grid.Column="0" HorizontalOptions="Start"/>
-                                    <Label Text="NOMBRE COMPLETO" Grid.Column="1" HorizontalOptions="Start"/>
-                                    <Label Text="1" Grid.Column="2" HorizontalOptions="Center"/>
-                                    <Label Text="ITSUR" Grid.Column="3" HorizontalOptions="Start"/>
-                                    <Label Text="{Binding CurrentRating}" Grid.Column="4" HorizontalOptions="Center"/>
-                                    <Label Text="{Binding TotalSolved}" Grid.Column="5" HorizontalOptions="Center"/>
-
-                                    <!-- Dificultades -->
-                                    <Label Text="0" Grid.Column="6" HorizontalOptions="Center"/>
-                                    <Label Text="0" Grid.Column="7" HorizontalOptions="Center"/>
-                                    <Label Text="0" Grid.Column="8" HorizontalOptions="Center"/>
-                                    <Label Text="0" Grid.Column="9" HorizontalOptions="Center"/>
-                                    <Label Text="0" Grid.Column="10" HorizontalOptions="Center"/>
-                                    <Label Text="0" Grid.Column="11" HorizontalOptions="Center"/>
-                                    <Label Text="0" Grid.Column="12" HorizontalOptions="Center"/>
-                                    <Label Text="0" Grid.Column="13" HorizontalOptions="Center"/>
-                                    <Label Text="0" Grid.Column="14" HorizontalOptions="Center"/>
-                                    <Label Text="0" Grid.Column="15" HorizontalOptions="Center"/>
-                                    <Label Text="0" Grid.Column="16" HorizontalOptions="Center"/>
-                                    <Label Text="0" Grid.Column="17" HorizontalOptions="Center"/>
-                                    <Label Text="0" Grid.Column="18" HorizontalOptions="Center"/>
-                                    <Label Text="0" Grid.Column="19" HorizontalOptions="Center"/>
-                                    <Label Text="0" Grid.Column="20" HorizontalOptions="Center"/>
-                                    <Label Text="0" Grid.Column="21" HorizontalOptions="Center"/>
-                                    <Label Text="0" Grid.Column="22" HorizontalOptions="Center"/>
-                                    <Label Text="0" Grid.Column="23" HorizontalOptions="Center"/>
-                                </Grid>
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
-                    </CollectionView>
-                </Grid>
-            </VerticalStackLayout>
+                <Label Text="800" FontAttributes="Bold" Grid.Column="6" HorizontalOptions="Center"/>
+                <Label Text="900" FontAttributes="Bold" Grid.Column="7" HorizontalOptions="Center"/>
+                <Label Text="1000" FontAttributes="Bold" Grid.Column="8" HorizontalOptions="Center"/>
+                <Label Text="1100" FontAttributes="Bold" Grid.Column="9" HorizontalOptions="Center"/>
+                <Label Text="1200" FontAttributes="Bold" Grid.Column="10" HorizontalOptions="Center"/>
+                <Label Text="1300" FontAttributes="Bold" Grid.Column="11" HorizontalOptions="Center"/>
+                <Label Text="1400" FontAttributes="Bold" Grid.Column="12" HorizontalOptions="Center"/>
+                <Label Text="1500" FontAttributes="Bold" Grid.Column="13" HorizontalOptions="Center"/>
+                <Label Text="1600" FontAttributes="Bold" Grid.Column="14" HorizontalOptions="Center"/>
+                <Label Text="1700" FontAttributes="Bold" Grid.Column="15" HorizontalOptions="Center"/>
+                <Label Text="1800" FontAttributes="Bold" Grid.Column="16" HorizontalOptions="Center"/>
+                <Label Text="1900" FontAttributes="Bold" Grid.Column="17" HorizontalOptions="Center"/>
+                <Label Text="2000" FontAttributes="Bold" Grid.Column="18" HorizontalOptions="Center"/>
+                <Label Text="2100" FontAttributes="Bold" Grid.Column="19" HorizontalOptions="Center"/>
+                <Label Text="2200" FontAttributes="Bold" Grid.Column="20" HorizontalOptions="Center"/>
+                <Label Text="2300" FontAttributes="Bold" Grid.Column="21" HorizontalOptions="Center"/>
+                <Label Text="2400" FontAttributes="Bold" Grid.Column="22" HorizontalOptions="Center"/>
+                <Label Text="2500" FontAttributes="Bold" Grid.Column="23" HorizontalOptions="Center"/>
+            </Grid>
         </ScrollView>
-    </ScrollView>
+
+        <!-- Contenido desplazable -->
+        <ScrollView Orientation="Vertical"
+                    Grid.Row="2">
+            <ScrollView x:Name="ContentScrollView"
+                        Orientation="Horizontal"
+                        Scrolled="OnContentHorizontalScroll">
+                <CollectionView ItemsSource="{Binding UsuariosResumen}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid ColumnDefinitions="200,260,50,100,100,60,
+                                                 50,50,50,50,50,50,
+                                                 50,50,50,50,50,50,
+                                                 50,50,50,50,50,50"
+                                  Padding="50,10,50,10"
+                                  HorizontalOptions="Start">
+
+                                <Label Text="{Binding Handle}" Grid.Column="0" HorizontalOptions="Start"/>
+                                <Label Text="NOMBRE COMPLETO" Grid.Column="1" HorizontalOptions="Start"/>
+                                <Label Text="1" Grid.Column="2" HorizontalOptions="Center"/>
+                                <Label Text="ITSUR" Grid.Column="3" HorizontalOptions="Start"/>
+                                <Label Text="{Binding CurrentRating}" Grid.Column="4" HorizontalOptions="Center"/>
+                                <Label Text="{Binding TotalSolved}" Grid.Column="5" HorizontalOptions="Center"/>
+
+                                <!-- Dificultades -->
+                                <Label Text="0" Grid.Column="6" HorizontalOptions="Center"/>
+                                <Label Text="0" Grid.Column="7" HorizontalOptions="Center"/>
+                                <Label Text="0" Grid.Column="8" HorizontalOptions="Center"/>
+                                <Label Text="0" Grid.Column="9" HorizontalOptions="Center"/>
+                                <Label Text="0" Grid.Column="10" HorizontalOptions="Center"/>
+                                <Label Text="0" Grid.Column="11" HorizontalOptions="Center"/>
+                                <Label Text="0" Grid.Column="12" HorizontalOptions="Center"/>
+                                <Label Text="0" Grid.Column="13" HorizontalOptions="Center"/>
+                                <Label Text="0" Grid.Column="14" HorizontalOptions="Center"/>
+                                <Label Text="0" Grid.Column="15" HorizontalOptions="Center"/>
+                                <Label Text="0" Grid.Column="16" HorizontalOptions="Center"/>
+                                <Label Text="0" Grid.Column="17" HorizontalOptions="Center"/>
+                                <Label Text="0" Grid.Column="18" HorizontalOptions="Center"/>
+                                <Label Text="0" Grid.Column="19" HorizontalOptions="Center"/>
+                                <Label Text="0" Grid.Column="20" HorizontalOptions="Center"/>
+                                <Label Text="0" Grid.Column="21" HorizontalOptions="Center"/>
+                                <Label Text="0" Grid.Column="22" HorizontalOptions="Center"/>
+                                <Label Text="0" Grid.Column="23" HorizontalOptions="Center"/>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </ScrollView>
+        </ScrollView>
+    </Grid>
 </ContentPage>
