@@ -10,95 +10,105 @@
     </ContentPage.BindingContext>
 
     <Grid RowDefinitions="Auto,Auto,*">
-        <!-- Botón Cargar Datos -->
-        <Button Text="Cargar Datos" 
-                Command="{Binding CargarResumenUsuariosCommand}"
-                Grid.Row="0"/>
+        <StackLayout Orientation="Horizontal" 
+                     Grid.Row="0"
+                     Padding="10"
+                     Spacing="10"
+                     HorizontalOptions="Center">
+            <DatePicker Date="{Binding FechaInicio}" 
+                        WidthRequest="150"/>
+            <Label Text="a" 
+                   VerticalOptions="Center"/>
+            <DatePicker Date="{Binding FechaFin}" 
+                        WidthRequest="150"/>
+            <Button Text="Cargar Datos" 
+                    Command="{Binding CargarResumenUsuariosCommand}"
+                    WidthRequest="120"/>
+        </StackLayout>
 
-        <!-- Encabezados Fijos (con su propio ScrollView) -->
         <ScrollView x:Name="HeaderScrollView"
+                    Grid.Row="1"
                     Orientation="Horizontal"
-                    IsEnabled="{Binding EncabezadosHabilitados}" 
-                    HorizontalScrollBarVisibility="Never"
+                    IsEnabled="{Binding EncabezadosHabilitados}"
                     Scrolled="OnHeaderScrollViewScrolled"
-                    Grid.Row="1">       
-            <Grid ColumnDefinitions="200,260,50,100,100,60,
-                                     50,50,50,50,50,50,
-                                     50,50,50,50,50,50,
-                                     50,50,50,50,50,50"
-                  HorizontalOptions="Start"
-                  Padding="50,10,50,10">
+                    HorizontalScrollBarVisibility="Never">
+            <Grid ColumnDefinitions="200,260,50,100,100,60,50,70,60,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50"
+                  Padding="50,10,50,10"
+                  HorizontalOptions="Start">
 
-                <Label Text="Usuario" FontAttributes="Bold" Grid.Column="0" HorizontalOptions="Start"/>
-                <Label Text="Nombre Completo" FontAttributes="Bold" Grid.Column="1" HorizontalOptions="Start"/>
-                <Label Text="Curso" FontAttributes="Bold" Grid.Column="2" HorizontalOptions="Start"/>
-                <Label Text="Escuela" FontAttributes="Bold" Grid.Column="3" HorizontalOptions="Start"/>
-                <Label Text="Rating" FontAttributes="Bold" Grid.Column="4" HorizontalOptions="Center"/>
-                <Label Text="Solved" FontAttributes="Bold" Grid.Column="5" HorizontalOptions="Center"/>
+                <Label Text="Usuario" Grid.Column="0" FontAttributes="Bold"/>
+                <Label Text="Nombre" Grid.Column="1" FontAttributes="Bold"/>
+                <Label Text="Curso" Grid.Column="2" FontAttributes="Bold" HorizontalOptions="Center"/>
+                <Label Text="Escuela" Grid.Column="3" FontAttributes="Bold" HorizontalOptions="Center"/>
+                <Label Text="Rating" Grid.Column="4" FontAttributes="Bold" HorizontalOptions="Center"/>
+                <Label Text="Solved" Grid.Column="5" FontAttributes="Bold" HorizontalOptions="Center"/>
+                <Label Text="Team" Grid.Column="6" FontAttributes="Bold" HorizontalOptions="Center"/>
+                <Label Text="Individual" Grid.Column="7" FontAttributes="Bold" HorizontalOptions="Center"/>
+                <Label Text="Unrated" Grid.Column="8" FontAttributes="Bold" HorizontalOptions="Center"/>
 
-                <Label Text="800" FontAttributes="Bold" Grid.Column="6" HorizontalOptions="Center"/>
-                <Label Text="900" FontAttributes="Bold" Grid.Column="7" HorizontalOptions="Center"/>
-                <Label Text="1000" FontAttributes="Bold" Grid.Column="8" HorizontalOptions="Center"/>
-                <Label Text="1100" FontAttributes="Bold" Grid.Column="9" HorizontalOptions="Center"/>
-                <Label Text="1200" FontAttributes="Bold" Grid.Column="10" HorizontalOptions="Center"/>
-                <Label Text="1300" FontAttributes="Bold" Grid.Column="11" HorizontalOptions="Center"/>
-                <Label Text="1400" FontAttributes="Bold" Grid.Column="12" HorizontalOptions="Center"/>
-                <Label Text="1500" FontAttributes="Bold" Grid.Column="13" HorizontalOptions="Center"/>
-                <Label Text="1600" FontAttributes="Bold" Grid.Column="14" HorizontalOptions="Center"/>
-                <Label Text="1700" FontAttributes="Bold" Grid.Column="15" HorizontalOptions="Center"/>
-                <Label Text="1800" FontAttributes="Bold" Grid.Column="16" HorizontalOptions="Center"/>
-                <Label Text="1900" FontAttributes="Bold" Grid.Column="17" HorizontalOptions="Center"/>
-                <Label Text="2000" FontAttributes="Bold" Grid.Column="18" HorizontalOptions="Center"/>
-                <Label Text="2100" FontAttributes="Bold" Grid.Column="19" HorizontalOptions="Center"/>
-                <Label Text="2200" FontAttributes="Bold" Grid.Column="20" HorizontalOptions="Center"/>
-                <Label Text="2300" FontAttributes="Bold" Grid.Column="21" HorizontalOptions="Center"/>
-                <Label Text="2400" FontAttributes="Bold" Grid.Column="22" HorizontalOptions="Center"/>
-                <Label Text="2500" FontAttributes="Bold" Grid.Column="23" HorizontalOptions="Center"/>
+                <Label Text="800" Grid.Column="9" FontAttributes="Bold" HorizontalOptions="Center"/>
+                <Label Text="900" Grid.Column="10" FontAttributes="Bold" HorizontalOptions="Center"/>
+                <Label Text="1000" FontAttributes="Bold" Grid.Column="11" HorizontalOptions="Center"/>
+                <Label Text="1100" FontAttributes="Bold" Grid.Column="12" HorizontalOptions="Center"/>
+                <Label Text="1200" FontAttributes="Bold" Grid.Column="13" HorizontalOptions="Center"/>
+                <Label Text="1300" FontAttributes="Bold" Grid.Column="14" HorizontalOptions="Center"/>
+                <Label Text="1400" FontAttributes="Bold" Grid.Column="15" HorizontalOptions="Center"/>
+                <Label Text="1500" FontAttributes="Bold" Grid.Column="16" HorizontalOptions="Center"/>
+                <Label Text="1600" FontAttributes="Bold" Grid.Column="17" HorizontalOptions="Center"/>
+                <Label Text="1700" FontAttributes="Bold" Grid.Column="18" HorizontalOptions="Center"/>
+                <Label Text="1800" FontAttributes="Bold" Grid.Column="19" HorizontalOptions="Center"/>
+                <Label Text="1900" FontAttributes="Bold" Grid.Column="20" HorizontalOptions="Center"/>
+                <Label Text="2000" FontAttributes="Bold" Grid.Column="21" HorizontalOptions="Center"/>
+                <Label Text="2100" FontAttributes="Bold" Grid.Column="22" HorizontalOptions="Center"/>
+                <Label Text="2200" FontAttributes="Bold" Grid.Column="23" HorizontalOptions="Center"/>
+                <Label Text="2300" FontAttributes="Bold" Grid.Column="24" HorizontalOptions="Center"/>
+                <Label Text="2400" FontAttributes="Bold" Grid.Column="25" HorizontalOptions="Center"/>
+                <Label Text="2500" FontAttributes="Bold" Grid.Column="26" HorizontalOptions="Center"/>
             </Grid>
         </ScrollView>
 
-        <!-- Contenido desplazable -->
-        <ScrollView Orientation="Vertical"
-                    Grid.Row="2">
+        <ScrollView Grid.Row="2"
+                    Orientation="Vertical">
             <ScrollView x:Name="ContentScrollView"
                         Orientation="Horizontal"
                         Scrolled="OnContentHorizontalScroll">
                 <CollectionView ItemsSource="{Binding UsuariosResumen}">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <Grid ColumnDefinitions="200,260,50,100,100,60,
-                                                 50,50,50,50,50,50,
-                                                 50,50,50,50,50,50,
-                                                 50,50,50,50,50,50"
+                            <Grid ColumnDefinitions="200,260,50,100,100,60,50,70,60,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50"
                                   Padding="50,10,50,10"
                                   HorizontalOptions="Start">
 
-                                <Label Text="{Binding Handle}" Grid.Column="0" HorizontalOptions="Start"/>
-                                <Label Text="NOMBRE COMPLETO" Grid.Column="1" HorizontalOptions="Start"/>
-                                <Label Text="1" Grid.Column="2" HorizontalOptions="Center"/>
-                                <Label Text="ITSUR" Grid.Column="3" HorizontalOptions="Start"/>
+                                <Label Text="{Binding Handle}" Grid.Column="0"/>
+                                <Label Text="{Binding FullName}" Grid.Column="1"/>
+                                <Label Text="{Binding Curso}" Grid.Column="2"  HorizontalOptions="Center"/>
+                                <Label Text="{Binding NombreEscuela}" Grid.Column="3" HorizontalOptions="Center"/>
                                 <Label Text="{Binding CurrentRating}" Grid.Column="4" HorizontalOptions="Center"/>
                                 <Label Text="{Binding TotalSolved}" Grid.Column="5" HorizontalOptions="Center"/>
 
-                                <!-- Dificultades -->
-                                <Label Text="0" Grid.Column="6" HorizontalOptions="Center"/>
-                                <Label Text="0" Grid.Column="7" HorizontalOptions="Center"/>
-                                <Label Text="0" Grid.Column="8" HorizontalOptions="Center"/>
-                                <Label Text="0" Grid.Column="9" HorizontalOptions="Center"/>
-                                <Label Text="0" Grid.Column="10" HorizontalOptions="Center"/>
-                                <Label Text="0" Grid.Column="11" HorizontalOptions="Center"/>
-                                <Label Text="0" Grid.Column="12" HorizontalOptions="Center"/>
-                                <Label Text="0" Grid.Column="13" HorizontalOptions="Center"/>
-                                <Label Text="0" Grid.Column="14" HorizontalOptions="Center"/>
-                                <Label Text="0" Grid.Column="15" HorizontalOptions="Center"/>
-                                <Label Text="0" Grid.Column="16" HorizontalOptions="Center"/>
-                                <Label Text="0" Grid.Column="17" HorizontalOptions="Center"/>
-                                <Label Text="0" Grid.Column="18" HorizontalOptions="Center"/>
-                                <Label Text="0" Grid.Column="19" HorizontalOptions="Center"/>
-                                <Label Text="0" Grid.Column="20" HorizontalOptions="Center"/>
-                                <Label Text="0" Grid.Column="21" HorizontalOptions="Center"/>
-                                <Label Text="0" Grid.Column="22" HorizontalOptions="Center"/>
-                                <Label Text="0" Grid.Column="23" HorizontalOptions="Center"/>
+                                <Label Text="{Binding Team, StringFormat='{0}'}" Grid.Column="6" HorizontalOptions="Center"/>
+                                <Label Text="{Binding Individual, StringFormat='{0}'}" Grid.Column="7" HorizontalOptions="Center"/>
+                                
+                                <Label Text="{Binding ProblemasPorDificultad[-1], StringFormat='{0}'}" Grid.Column="8" HorizontalOptions="Center"/>
+
+                                <Label Text="{Binding ProblemasPorDificultad[800], StringFormat='{0}'}" Grid.Column="9" HorizontalOptions="Center"/>
+                                <Label Text="{Binding ProblemasPorDificultad[900], StringFormat='{0}'}" Grid.Column="10" HorizontalOptions="Center"/>
+                                <Label Text="{Binding ProblemasPorDificultad[1000], StringFormat='{0}'}" Grid.Column="11" HorizontalOptions="Center"/>
+                                <Label Text="{Binding ProblemasPorDificultad[1100], StringFormat='{0}'}" Grid.Column="12" HorizontalOptions="Center"/>
+                                <Label Text="{Binding ProblemasPorDificultad[1200], StringFormat='{0}'}" Grid.Column="13" HorizontalOptions="Center"/>
+                                <Label Text="{Binding ProblemasPorDificultad[1300], StringFormat='{0}'}" Grid.Column="14" HorizontalOptions="Center"/>
+                                <Label Text="{Binding ProblemasPorDificultad[1400], StringFormat='{0}'}" Grid.Column="15" HorizontalOptions="Center"/>
+                                <Label Text="{Binding ProblemasPorDificultad[1500], StringFormat='{0}'}" Grid.Column="16" HorizontalOptions="Center"/>
+                                <Label Text="{Binding ProblemasPorDificultad[1600], StringFormat='{0}'}" Grid.Column="17" HorizontalOptions="Center"/>
+                                <Label Text="{Binding ProblemasPorDificultad[1700], StringFormat='{0}'}" Grid.Column="18" HorizontalOptions="Center"/>
+                                <Label Text="{Binding ProblemasPorDificultad[1800], StringFormat='{0}'}" Grid.Column="19" HorizontalOptions="Center"/>
+                                <Label Text="{Binding ProblemasPorDificultad[1900], StringFormat='{0}'}" Grid.Column="20" HorizontalOptions="Center"/>
+                                <Label Text="{Binding ProblemasPorDificultad[2000], StringFormat='{0}'}" Grid.Column="21" HorizontalOptions="Center"/>
+                                <Label Text="{Binding ProblemasPorDificultad[2100], StringFormat='{0}'}" Grid.Column="22" HorizontalOptions="Center"/>
+                                <Label Text="{Binding ProblemasPorDificultad[2200], StringFormat='{0}'}" Grid.Column="23" HorizontalOptions="Center"/>
+                                <Label Text="{Binding ProblemasPorDificultad[2300], StringFormat='{0}'}" Grid.Column="24" HorizontalOptions="Center"/>
+                                <Label Text="{Binding ProblemasPorDificultad[2400], StringFormat='{0}'}" Grid.Column="25" HorizontalOptions="Center"/>
+                                <Label Text="{Binding ProblemasPorDificultad[2500], StringFormat='{0}'}" Grid.Column="26" HorizontalOptions="Center"/>
                             </Grid>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>

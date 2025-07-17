@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\views\\dashboardpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\views\\dashboardpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\services\\cfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\services\\cfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\models\\userprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\models\\userprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\viewmodels\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -13,6 +17,22 @@
     {
       "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\views\\dashboardpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\views\\dashboardpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\models\\problemstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\models\\problemstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\models\\userstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\models\\userstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\services\\dbservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\services\\dbservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\views\\dashboardpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\views\\dashboardpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,46 +42,107 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
+              "Title": "DBServices.cs",
+              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Services\\DBServices.cs",
+              "RelativeDocumentMoniker": "ErizosCF\\Services\\DBServices.cs",
+              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Services\\DBServices.cs",
+              "RelativeToolTip": "ErizosCF\\Services\\DBServices.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABkAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T19:08:37.195Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserStats.cs",
+              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Models\\UserStats.cs",
+              "RelativeDocumentMoniker": "ErizosCF\\Models\\UserStats.cs",
+              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Models\\UserStats.cs",
+              "RelativeToolTip": "ErizosCF\\Models\\UserStats.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-14T23:00:15.241Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProblemStats.cs",
+              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Models\\ProblemStats.cs",
+              "RelativeDocumentMoniker": "ErizosCF\\Models\\ProblemStats.cs",
+              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Models\\ProblemStats.cs",
+              "RelativeToolTip": "ErizosCF\\Models\\ProblemStats.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-14T23:07:50.345Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CFService.cs",
+              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Services\\CFService.cs",
+              "RelativeDocumentMoniker": "ErizosCF\\Services\\CFService.cs",
+              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Services\\CFService.cs",
+              "RelativeToolTip": "ErizosCF\\Services\\CFService.cs",
+              "ViewState": "AgIAAH0AAAAAAAAAAAAAAJEAAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-14T23:16:41.974Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "DashBoardViewModel.cs",
               "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\ViewModels\\DashBoardViewModel.cs",
               "RelativeDocumentMoniker": "ErizosCF\\ViewModels\\DashBoardViewModel.cs",
               "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\ViewModels\\DashBoardViewModel.cs",
               "RelativeToolTip": "ErizosCF\\ViewModels\\DashBoardViewModel.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAABDAAAAAAAAAA==",
+              "ViewState": "AgIAACwAAAAAAAAAAAAgwDYAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-14T17:55:36.684Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
+              "Title": "UserProfile.cs",
+              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Models\\UserProfile.cs",
+              "RelativeDocumentMoniker": "ErizosCF\\Models\\UserProfile.cs",
+              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Models\\UserProfile.cs",
+              "RelativeToolTip": "ErizosCF\\Models\\UserProfile.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAowCEAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-14T22:57:54.826Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "DashBoardPage.xaml",
               "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Views\\DashBoardPage.xaml",
               "RelativeDocumentMoniker": "ErizosCF\\Views\\DashBoardPage.xaml",
               "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Views\\DashBoardPage.xaml",
               "RelativeToolTip": "ErizosCF\\Views\\DashBoardPage.xaml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABcAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAAFgAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-07-14T17:55:31.736Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "DashBoardPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Views\\DashBoardPage.xaml.cs",
               "RelativeDocumentMoniker": "ErizosCF\\Views\\DashBoardPage.xaml.cs",
               "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Views\\DashBoardPage.xaml.cs",
               "RelativeToolTip": "ErizosCF\\Views\\DashBoardPage.xaml.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAA7wCIAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-14T17:55:28.155Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-14T17:55:28.155Z"
             }
           ]
         }
