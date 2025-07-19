@@ -150,7 +150,7 @@ namespace ErizosCF.Services
                     {
                         ProblemName = problemId,
                         Verdict = "OK",
-                        FechaResolucion = fechaResolucion,
+                        SolvedDate = fechaResolucion,
                         Dificultad = dificultad,
                         TeamId = teamId
                     });

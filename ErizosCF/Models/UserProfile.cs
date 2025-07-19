@@ -1,5 +1,6 @@
 ﻿using ErizosCF.Services;
 using MySql.Data.MySqlClient;
+using System.Collections.ObjectModel;
 using System.Data;
 using System.Diagnostics;
 
@@ -26,6 +27,7 @@ namespace ErizosCF.Models
 
         // Estadisticas calculadas
         public Dictionary<int, int> ProblemasPorDificultad { get; set; } = new();
+        public ObservableCollection<int> ProblemasPorSemana { get; set; } = new();
         public int TotalSolved { get; set; }
         public int Individual { get; set; }
         public int Team { get; set; }

@@ -73,11 +73,11 @@
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
-              "version": "[9.0.6, )"
+              "version": "[9.0.7, )"
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[9.0.81, )"
+              "version": "[9.0.90, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
@@ -88,6 +88,10 @@
             "MySql.Data": {
               "target": "Package",
               "version": "[9.3.0, )"
+            },
+            "System.Private.Uri": {
+              "target": "Package",
+              "version": "[4.3.2, )"
             }
           },
           "imports": [
@@ -120,11 +124,11 @@
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
-              "version": "[9.0.6, )"
+              "version": "[9.0.7, )"
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[9.0.81, )"
+              "version": "[9.0.90, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
@@ -135,6 +139,10 @@
             "MySql.Data": {
               "target": "Package",
               "version": "[9.3.0, )"
+            },
+            "System.Private.Uri": {
+              "target": "Package",
+              "version": "[4.3.2, )"
             }
           },
           "imports": [
@@ -167,11 +175,11 @@
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
-              "version": "[9.0.6, )"
+              "version": "[9.0.7, )"
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[9.0.81, )"
+              "version": "[9.0.90, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
@@ -182,6 +190,10 @@
             "MySql.Data": {
               "target": "Package",
               "version": "[9.3.0, )"
+            },
+            "System.Private.Uri": {
+              "target": "Package",
+              "version": "[4.3.2, )"
             }
           },
           "imports": [
@@ -215,15 +227,19 @@
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
-              "version": "[9.0.6, )"
+              "version": "[9.0.7, )"
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[9.0.81, )"
+              "version": "[9.0.90, )"
             },
             "MySql.Data": {
               "target": "Package",
               "version": "[9.3.0, )"
+            },
+            "System.Private.Uri": {
+              "target": "Package",
+              "version": "[4.3.2, )"
             }
           },
           "imports": [

@@ -9,13 +9,15 @@
         <viewmodels:DashBoardViewModel />
     </ContentPage.BindingContext>
 
-    <Grid RowDefinitions="Auto,Auto,*">
+    <ScrollView>
+
+        <VerticalStackLayout>
+
         <StackLayout Orientation="Horizontal" 
-                     Grid.Row="0"
                      Padding="10"
                      Spacing="10"
                      HorizontalOptions="Center">
-            <DatePicker Date="{Binding FechaInicio}" 
+            <DatePicker Date="{Binding FechaInicio}"
                         WidthRequest="150"/>
             <Label Text="a" 
                    VerticalOptions="Center"/>
@@ -26,11 +28,14 @@
                     WidthRequest="120"/>
         </StackLayout>
 
-        <ScrollView x:Name="HeaderScrollView"
-                    Grid.Row="1"
+        <StackLayout>
+            <Label Text="Problemas Realizados por dificultad"></Label>
+        </StackLayout>
+
+        <ScrollView x:Name="HeaderScrollView1"
                     Orientation="Horizontal"
                     IsEnabled="{Binding EncabezadosHabilitados}"
-                    Scrolled="OnHeaderScrollViewScrolled"
+                    Scrolled="OnHeaderScrollViewScrolled1"
                     HorizontalScrollBarVisibility="Never">
             <Grid ColumnDefinitions="200,260,50,100,100,60,50,70,60,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50"
                   Padding="50,10,50,10"
@@ -67,11 +72,10 @@
             </Grid>
         </ScrollView>
 
-        <ScrollView Grid.Row="2"
-                    Orientation="Vertical">
-            <ScrollView x:Name="ContentScrollView"
+        <ScrollView Orientation="Vertical">
+            <ScrollView x:Name="ContentScrollView1"
                         Orientation="Horizontal"
-                        Scrolled="OnContentHorizontalScroll">
+                        Scrolled="OnContentHorizontalScroll1">
                 <CollectionView ItemsSource="{Binding UsuariosResumen}">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
@@ -88,7 +92,7 @@
 
                                 <Label Text="{Binding Team, StringFormat='{0}'}" Grid.Column="6" HorizontalOptions="Center"/>
                                 <Label Text="{Binding Individual, StringFormat='{0}'}" Grid.Column="7" HorizontalOptions="Center"/>
-                                
+
                                 <Label Text="{Binding ProblemasPorDificultad[-1], StringFormat='{0}'}" Grid.Column="8" HorizontalOptions="Center"/>
 
                                 <Label Text="{Binding ProblemasPorDificultad[800], StringFormat='{0}'}" Grid.Column="9" HorizontalOptions="Center"/>
@@ -115,5 +119,107 @@
                 </CollectionView>
             </ScrollView>
         </ScrollView>
-    </Grid>
+
+        <StackLayout>
+            <Label Text="Problemas Individuales realizados por semana"></Label>
+        </StackLayout>
+
+            <ScrollView x:Name="HeaderScrollView2"
+            Orientation="Horizontal"
+            IsEnabled="{Binding EncabezadosHabilitados}"
+            Scrolled="OnHeaderScrollViewScrolled2"
+            HorizontalScrollBarVisibility="Never">
+                <Grid>
+                    
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="260"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="Usuario" Grid.Column="0" FontAttributes="Bold"/>
+                    <Label Text="Nombre" Grid.Column="1" FontAttributes="Bold"/>
+                    <Label Text="Curso" Grid.Column="2" FontAttributes="Bold" HorizontalOptions="Center"/>
+                    <Label Text="Escuela" Grid.Column="3" FontAttributes="Bold" HorizontalOptions="Center"/>
+                    <Label Text="Rating" Grid.Column="4" FontAttributes="Bold" HorizontalOptions="Center"/>
+                    <Label Text="Solved" Grid.Column="5" FontAttributes="Bold" HorizontalOptions="Center"/>
+
+                    <FlexLayout Grid.Column="6"
+                    Direction="Row"
+                    AlignItems="Center"
+                    BindableLayout.ItemsSource="{Binding EncabezadosSemanas}">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <Label Text="{Binding}"
+                           WidthRequest="100"
+                           FontAttributes="Bold"
+                           HorizontalTextAlignment="Center"
+                           Margin="0,0,10,0"/>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </FlexLayout>
+                </Grid>
+            </ScrollView>
+
+            <ScrollView Orientation="Vertical">
+                <ScrollView x:Name="ContentScrollView2"
+                Orientation="Horizontal"
+                Scrolled="OnContentHorizontalScroll2">
+                    <CollectionView ItemsSource="{Binding UsuariosResumen}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <!-- Definición de columnas (6 fijas + dinámicas) -->
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="200"/>
+                                        <!-- Usuario -->
+                                        <ColumnDefinition Width="260"/>
+                                        <!-- Nombre -->
+                                        <ColumnDefinition Width="50"/>
+                                        <!-- Curso -->
+                                        <ColumnDefinition Width="100"/>
+                                        <!-- Escuela -->
+                                        <ColumnDefinition Width="100"/>
+                                        <!-- Rating -->
+                                        <ColumnDefinition Width="60"/>
+                                        <!-- Solved -->
+                                        <ColumnDefinition Width="Auto"/>
+                                        <!-- Semanas -->
+                                    </Grid.ColumnDefinitions>
+
+                                    <!-- Columnas fijas -->
+                                    <Label Text="{Binding Handle}" Grid.Column="0"/>
+                                    <Label Text="{Binding FullName}" Grid.Column="1"/>
+                                    <Label Text="{Binding Curso}" Grid.Column="2" HorizontalOptions="Center"/>
+                                    <Label Text="{Binding NombreEscuela}" Grid.Column="3" HorizontalOptions="Center"/>
+                                    <Label Text="{Binding CurrentRating}" Grid.Column="4" HorizontalOptions="Center"/>
+                                    <Label Text="{Binding TotalSolved}" Grid.Column="5" HorizontalOptions="Center"/>
+
+                                    <!-- Columnas dinámicas para semanas -->
+                                    <FlexLayout Grid.Column="6"
+                                    Direction="Row"
+                                    AlignItems="Center"
+                                    BindableLayout.ItemsSource="{Binding ProblemasPorSemana}">
+                                        <BindableLayout.ItemTemplate>
+                                            <DataTemplate>
+                                                <Label Text="{Binding .}"
+                                           WidthRequest="100"
+                                           HorizontalTextAlignment="Center"
+                                           Margin="0,0,10,0"/>
+                                            </DataTemplate>
+                                        </BindableLayout.ItemTemplate>
+                                    </FlexLayout>
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </ScrollView>
+            </ScrollView>
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
