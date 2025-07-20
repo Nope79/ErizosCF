@@ -17,6 +17,7 @@ public partial class DashBoardPage : ContentPage
     public DashBoardPage()
     {
         InitializeComponent();
+        BindingContext = new DashBoardViewModel(new DashboardFilterService());
     }
 
     // primer tabla

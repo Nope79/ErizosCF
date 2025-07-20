@@ -1,4 +1,5 @@
 ﻿using ErizosCF.Services;
+using System;
 using MySql.Data.MySqlClient;
 using System.Collections.ObjectModel;
 using System.Data;
@@ -15,7 +16,6 @@ namespace ErizosCF.Models
         public string FullName => $"{FirstName} {LastName}".Trim();
         public int CurrentRating { get; set; }
         public int MaxRating { get; set; }
-        public string Rank { get; set; }
         public DateTime FechaRegistroCF { get; set; }
 
         // BD local
@@ -98,16 +98,16 @@ namespace ErizosCF.Models
                 var query = "SELECT handle, nombres, apellidos, estado, sexo, id_escuela, curso FROM usuarios";
                 using var cmd = new MySqlCommand(query, db.Connection);
                 using var reader = await cmd.ExecuteReaderAsync();
-
+                
                 while (await reader.ReadAsync())
                 {
                     var usuario = new UserProfile
                     {
                         Handle = reader.GetString("handle"),
-                        Estado = reader.GetString("estado"),
+                        Estado = reader.GetString("estado").ToUpper(),
                         FirstName = reader.GetString("nombres"),
                         LastName = reader.GetString("apellidos"),
-                        Sexo = reader.GetString("sexo"),
+                        Sexo = reader.GetString("sexo").ToUpper(),
                         IdEscuela = reader.GetInt32("id_escuela"),
                         Curso = reader.GetInt32("curso")
                     };
@@ -186,6 +186,20 @@ namespace ErizosCF.Models
             {
                 db.CloseConnection();
             }
+        }
+
+        public static int ObtenerRangoDesdeRating(int rating)
+        {
+            if (rating < 1200) return 0;
+            if (rating < 1400) return 1;
+            if (rating < 1600) return 2;
+            if (rating < 1900) return 3;
+            if (rating < 2100) return 4;
+            if (rating < 2300) return 5;
+            if (rating < 2400) return 6;
+            if (rating < 2600) return 7;
+            if (rating < 3000) return 8;
+            return 9;
         }
     }
 }

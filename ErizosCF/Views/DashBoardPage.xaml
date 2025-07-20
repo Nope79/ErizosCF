@@ -5,10 +5,6 @@
              x:Class="ErizosCF.Views.DashBoardPage"
              Title="Dashboard">
 
-    <ContentPage.BindingContext>
-        <viewmodels:DashBoardViewModel />
-    </ContentPage.BindingContext>
-
     <ScrollView>
 
         <VerticalStackLayout>
@@ -27,6 +23,114 @@
                     Command="{Binding CargarResumenUsuariosCommand}"
                     WidthRequest="120"/>
         </StackLayout>
+
+            <HorizontalStackLayout>
+
+                <StackLayout>
+                    <HorizontalStackLayout>
+                        <CheckBox IsChecked="{Binding Filtros.Curso1Seleccionado}" IsEnabled="{Binding IsFiltrable, Mode=OneWay}" />
+                        <Label Text="Curso 1" VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout>
+                        <CheckBox IsChecked="{Binding Filtros.Curso2Seleccionado}" IsEnabled="{Binding IsFiltrable, Mode=OneWay}" />
+                        <Label Text="Curso 2" VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout>
+                        <CheckBox IsChecked="{Binding Filtros.Curso3Seleccionado}" IsEnabled="{Binding IsFiltrable, Mode=OneWay}" />
+                        <Label Text="Curso 3" VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+                </StackLayout>
+
+                <StackLayout>
+                    <HorizontalStackLayout>
+                        <CheckBox IsChecked="{Binding Filtros.Hombres}" IsEnabled="{Binding IsFiltrable, Mode=OneWay}" />
+                        <Label Text="Hombres" VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout>
+                        <CheckBox IsChecked="{Binding Filtros.Mujeres}" IsEnabled="{Binding IsFiltrable, Mode=OneWay}" />
+                        <Label Text="Mujeres" VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+                </StackLayout>
+
+                <StackLayout>
+                    <HorizontalStackLayout>
+                        <CheckBox IsChecked="{Binding Filtros.Newbie}" IsEnabled="{Binding IsFiltrable, Mode=OneWay}" />
+                        <Label Text="Newbie ( 0 - 1199 )" VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout>
+                        <CheckBox IsChecked="{Binding Filtros.Pupil}" IsEnabled="{Binding IsFiltrable, Mode=OneWay}" />
+                        <Label Text="Pupil ( 1200 - 1399 )" VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout>
+                        <CheckBox IsChecked="{Binding Filtros.Specialist}" IsEnabled="{Binding IsFiltrable, Mode=OneWay}" />
+                        <Label Text="Specialist ( 1400 - 1599 )" VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout>
+                        <CheckBox IsChecked="{Binding Filtros.Expert}" IsEnabled="{Binding IsFiltrable, Mode=OneWay}" />
+                        <Label Text="Expert ( 1600 - 1899 )" VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout>
+                        <CheckBox IsChecked="{Binding Filtros.CandidateMaster}" IsEnabled="{Binding IsFiltrable, Mode=OneWay}" />
+                        <Label Text="Candidate Master ( 1900 - 2099 )" VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout>
+                        <CheckBox IsChecked="{Binding Filtros.Master}" IsEnabled="{Binding IsFiltrable, Mode=OneWay}" />
+                        <Label Text="Master ( 2100 - 2299 )" VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout>
+                        <CheckBox IsChecked="{Binding Filtros.InternationalMaster}" IsEnabled="{Binding IsFiltrable, Mode=OneWay}" />
+                        <Label Text="International Master ( 2300 - 2399 )" VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout>
+                        <CheckBox IsChecked="{Binding Filtros.GrandMaster}" IsEnabled="{Binding IsFiltrable, Mode=OneWay}" />
+                        <Label Text="Grandmaster ( 2400 - 2599 )" VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout>
+                        <CheckBox IsChecked="{Binding Filtros.InternationalGrandMaster}" IsEnabled="{Binding IsFiltrable, Mode=OneWay}" />
+                        <Label Text="International Grandmaster ( 2600 - 2999 )" VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout>
+                        <CheckBox IsChecked="{Binding Filtros.LegendaryGrandMaster}" IsEnabled="{Binding IsFiltrable, Mode=OneWay}" />
+                        <Label Text="Legendary Grandmaster ( ≥ 3000 )" VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+                </StackLayout>
+
+                <StackLayout>
+                    <HorizontalStackLayout>
+                        <CheckBox IsChecked="{Binding Filtros.Icpc}" IsEnabled="{Binding IsFiltrable, Mode=OneWay}" />
+                        <Label Text="ICPC" VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout>
+                        <CheckBox IsChecked="{Binding Filtros.Excelente}" IsEnabled="{Binding IsFiltrable, Mode=OneWay}" />
+                        <Label Text="Excelente" VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout>
+                        <CheckBox IsChecked="{Binding Filtros.Normal}" IsEnabled="{Binding IsFiltrable, Mode=OneWay}" />
+                        <Label Text="Normal" VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout>
+                        <CheckBox IsChecked="{Binding Filtros.Riesgo}" IsEnabled="{Binding IsFiltrable, Mode=OneWay}" />
+                        <Label Text="Riesgo" VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+                </StackLayout>
+            </HorizontalStackLayout>
+            
+
 
         <StackLayout>
             <Label Text="Problemas Realizados por dificultad"></Label>
