@@ -1,5 +1,5 @@
 using ErizosCF.ViewModels;
-using System.Diagnostics;
+using ErizosCF.Models;
 namespace ErizosCF.Views;
 
 public partial class DashBoardPage : ContentPage

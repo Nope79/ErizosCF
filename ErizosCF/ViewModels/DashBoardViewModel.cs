@@ -13,6 +13,7 @@ namespace ErizosCF.ViewModels
 
         private readonly CFService _cfService;
         public DashboardFilterService Filtros { get; }
+        public Escuela EscuelaFiltros { get; }
 
         [ObservableProperty]
         private bool _isFiltrable;
@@ -48,14 +49,39 @@ namespace ErizosCF.ViewModels
         [ObservableProperty]
         private ObservableCollection<int> _cursosSeleccionados = new();
 
+        [ObservableProperty]
+        ObservableCollection<Escuela> _escuelasDisponibles;
         public DashBoardViewModel(DashboardFilterService filtros)
         {
             _cfService = new CFService();
+
             Filtros = filtros;
             Filtros.FiltrosCambiaron += AplicarFiltros;
+
+            CargarEscuelasAsync();
         }
 
-        
+        private async Task CargarEscuelasAsync()
+        {
+            var query = await Escuela.ObtenerEscuelasAsync();
+
+            var lista = query.Select(e =>
+            {
+                var escuela = new Escuela
+                {
+                    Id = e.Id,
+                    Nombre = e.Nombre,
+                    EstaSeleccionada = true
+                };
+
+                escuela.FiltrosCambiaron += AplicarFiltros;
+
+                return escuela;
+            });
+
+            EscuelasDisponibles = new ObservableCollection<Escuela>(lista);
+        }
+
 
         [RelayCommand]
         private async Task CargarResumenUsuarios()
@@ -106,6 +132,8 @@ namespace ErizosCF.ViewModels
             {
                 if (TodosUsuariosResumen == null || !TodosUsuariosResumen.Any()) return;
 
+                Debug.WriteLine("Aplicando Filtros");
+
                 var cursosSeleccionados = new List<int>();
                 if (Filtros.Curso1Seleccionado) cursosSeleccionados.Add(1);
                 if (Filtros.Curso2Seleccionado) cursosSeleccionados.Add(2);
@@ -133,13 +161,25 @@ namespace ErizosCF.ViewModels
                 if (Filtros.Normal) estadoSeleccionado.Add("NORMAL");
                 if (Filtros.Riesgo) estadoSeleccionado.Add("RIESGO");
 
+                var escuelasSeleccionadas = new List<int>();
+                foreach(var esc in EscuelasDisponibles)
+                {
+                    if (esc.EstaSeleccionada) escuelasSeleccionadas.Add(esc.Id);
+                }
+
+                foreach(var e in escuelasSeleccionadas)
+                {
+                    Debug.WriteLine($"Datos: {e}");
+                }
+
                 var filtrados = TodosUsuariosResumen
                     .AsParallel()
                     .Where(u => 
                             cursosSeleccionados.Contains(u.Curso) && 
                             sexosSelexionados.Contains(u.Sexo) &&
                             rangosSeleccionados.Contains(UserProfile.ObtenerRangoDesdeRating(u.CurrentRating)) &&
-                            estadoSeleccionado.Contains(u.Estado)
+                            estadoSeleccionado.Contains(u.Estado) &&
+                            escuelasSeleccionadas.Contains(u.IdEscuela)
                     )
                     .ToList();
 
@@ -147,7 +187,7 @@ namespace ErizosCF.ViewModels
             }
             catch (Exception e)
             {
-                Debug.WriteLine($"Eroro: {e}");
+                Debug.WriteLine($"Error: {e}");
             }
 
             finally

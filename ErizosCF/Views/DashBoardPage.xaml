@@ -128,6 +128,19 @@
                         <Label Text="Riesgo" VerticalOptions="Center"/>
                     </HorizontalStackLayout>
                 </StackLayout>
+
+                <StackLayout>
+                    <CollectionView ItemsSource="{Binding EscuelasDisponibles}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <HorizontalStackLayout>
+                                    <CheckBox IsChecked="{Binding EstaSeleccionada}" IsEnabled="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.IsFiltrable}" />
+                                    <Label Text="{Binding Nombre}" />
+                                </HorizontalStackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
             </HorizontalStackLayout>
             
 

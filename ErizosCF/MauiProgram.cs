@@ -12,7 +12,6 @@ namespace ErizosCF
             var builder = MauiApp.CreateBuilder();
 
             builder.Services.AddSingleton<CFService>();
-            builder.Services.AddSingleton<EscuelaService>();
             builder.Services.AddTransient<DashBoardViewModel>();
             builder.Services.AddTransient<DashBoardPage>();
 
