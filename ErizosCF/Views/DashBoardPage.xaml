@@ -25,6 +25,7 @@
             <Label Text="a" 
                    VerticalOptions="Center"/>
             <DatePicker Date="{Binding FechaFin}" 
+                        
                         WidthRequest="150"/>
             <Button Text="Cargar Datos" 
                     Command="{Binding CargarResumenUsuariosCommand}"
@@ -265,7 +266,7 @@
         </ScrollView>
 
         <StackLayout>
-            <Label Text="Problemas Individuales realizados por semana"></Label>
+            <Label Text="Problemas realizados por semana"></Label>
         </StackLayout>
 
             <ScrollView x:Name="HeaderScrollView2"

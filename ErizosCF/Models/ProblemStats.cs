@@ -12,35 +12,29 @@ namespace ErizosCF.Models
         public int Dificultad { get; set; }
         public int? TeamId { get; set; }
 
-        public static List<int> ProblemasPorSemana(List<ProblemStats> problemas, DateTime FechaInicio, DateTime FechaFin)
+        public static List<int> ProblemasSemanales(List<ProblemStats> problemas, DateTime FechaInicio, DateTime FechaFin)
         {
-            TimeSpan diferencia = FechaFin.Subtract(FechaInicio);
-            int diasDiferencia = diferencia.Days;
-
-            diasDiferencia = (int)Math.Ceiling(diasDiferencia / 7.0);
-
+            int diasDiferencia = (int)Math.Ceiling((FechaFin - FechaInicio).TotalDays / 7.0);
             List<int> semanas = Enumerable.Repeat(0, diasDiferencia).ToList();
 
             try
             {
-                var x = FechaInicio.Date;
-                int y = 0;
-
                 foreach (var p in problemas)
                 {
-                    if (p.SolvedDate >= x.Date && p.SolvedDate <= x.Date.AddDays(7).AddSeconds(-1)) semanas[y]++;
-                    else
+                    if (p.SolvedDate.Date >= FechaInicio.Date && p.SolvedDate.Date <= FechaFin.Date)
                     {
-                        x = x.Date.AddDays(7);
-                        semanas[++y]++;
+                        int semanaIndex = (int)((p.SolvedDate.Date - FechaInicio.Date).TotalDays / 7.0);
+                        semanas[semanaIndex]++;
                     }
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
-                Debug.WriteLine($"Error al generar los porblemas por semana. {e}");
+                Debug.WriteLine($"Error al generar los problemas por semana: {e.Message}");
             }
+
             return semanas;
         }
+
     }
 }

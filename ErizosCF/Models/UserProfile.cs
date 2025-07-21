@@ -1,13 +1,14 @@
-﻿using ErizosCF.Services;
-using System;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using ErizosCF.Services;
 using MySql.Data.MySqlClient;
+using System;
 using System.Collections.ObjectModel;
 using System.Data;
 using System.Diagnostics;
 
 namespace ErizosCF.Models
 {
-    public class UserProfile
+    public partial class UserProfile : ObservableObject
     {
         // API CF
         public string Handle { get; set; }
@@ -17,6 +18,7 @@ namespace ErizosCF.Models
         public int CurrentRating { get; set; }
         public int MaxRating { get; set; }
         public DateTime FechaRegistroCF { get; set; }
+        public List<ProblemStats> Problemas { get; set; } = new();
 
         // BD local
         public string Estado { get; set; } // "ICPC", "Excelente", "Normal", "Riesto".
@@ -26,7 +28,9 @@ namespace ErizosCF.Models
         public int Curso { get; set; } // 1, 2, 3
 
         // Estadisticas calculadas
-        public Dictionary<int, int> ProblemasPorDificultad { get; set; } = new();
+        [ObservableProperty]
+        private Dictionary<int, int> _problemasPorDificultad = new();
+        public ObservableCollection<int> TODOSProblemasPorSemana { get; set; } = new();
         public ObservableCollection<int> ProblemasPorSemana { get; set; } = new();
         public int TotalSolved { get; set; }
         public int Individual { get; set; }
@@ -35,9 +39,8 @@ namespace ErizosCF.Models
         // Metodos
         public async Task ActualizarDatosCodeforces(UserProfile user, List<ProblemStats> problemas, int id)
         {
-
-            CurrentRating = user.CurrentRating;
-            NombreEscuela = await ObtenerEscuela(id);
+            CurrentRating = user.CurrentRating; // NO SÉ POR QUE NO PUEDO HACER ESTO AL LLAMAR LA API JEJE... SIMPLEMENTE NO CARGA.
+            if (NombreEscuela == null) NombreEscuela = await ObtenerEscuela(id);
             TotalSolved = problemas.Count();
             ProblemasPorDificultad.Clear();
             Team = 0;
@@ -68,21 +71,23 @@ namespace ErizosCF.Models
                 { 2500, 0 }
             };
             */
+            /// actualización de lo anterior: modifiqué el código y no sé si lo anterior sigue funcionando, yo diría que no porque se crea un nuevo diccionario, entonces esto iría en el nuevo 
+            /// diccionario y no atrás. solo para que lo tengan en cuenta, pero como solo es una rápida intuición, igual y me equivoco. solo tenganlo en cuenta.
 
             if (problemas != null)
             {
+                var nuevoDiccionario = new Dictionary<int, int>();
+
                 foreach (var p in problemas)
                 {
-                    if (p.TeamId != null) Team++;
-                    else Individual++;
-                        int dificultadKey = (p.Dificultad > 0) ? p.Dificultad : -1;
+                    int dificultadKey = (p.Dificultad > 0) ? p.Dificultad : -1;
+                    nuevoDiccionario[dificultadKey] = nuevoDiccionario.TryGetValue(dificultadKey, out var count) ? count + 1 : 1;
 
-                    /* el usuario ve 0's
-                    ProblemasPorDificultad[dificultadKey]++;
-                    */
-
-                    ProblemasPorDificultad[dificultadKey] = ProblemasPorDificultad.TryGetValue(dificultadKey, out var count) ? count + 1 : 1;
+                    if (p.TeamId == null) Individual++;
                 }
+
+                Team = TotalSolved - Individual;
+                ProblemasPorDificultad = nuevoDiccionario;
             }
         }
 
