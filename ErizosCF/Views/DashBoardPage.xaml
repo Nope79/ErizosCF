@@ -3,7 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodels="clr-namespace:ErizosCF.ViewModels"
              x:Class="ErizosCF.Views.DashBoardPage"
+             xmlns:services="clr-namespace:ErizosCF.Services"
              Title="Dashboard">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <services:InverseBoolConverter x:Key="InverseBoolConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <ScrollView>
 
@@ -22,7 +29,12 @@
             <Button Text="Cargar Datos" 
                     Command="{Binding CargarResumenUsuariosCommand}"
                     WidthRequest="120"/>
-        </StackLayout>
+
+            <Button Text="Filtrar Datos" 
+                    Command="{Binding AplicarFiltrosEstaticosCommand}"
+                    IsEnabled="{Binding ModoFiltroSeleccionado}"
+                    WidthRequest="120"/>
+            </StackLayout>
 
             <HorizontalStackLayout>
 
@@ -141,6 +153,21 @@
                         </CollectionView.ItemTemplate>
                     </CollectionView>
                 </StackLayout>
+
+                <StackLayout>
+                    <RadioButton Content="Modo Estático"
+                                 GroupName="ModoFiltro"
+                                 IsEnabled="{Binding IsFiltrable}"
+                                 IsChecked="{Binding ModoFiltroSeleccionado}" />
+
+                    <RadioButton Content="Modo Dinámico"
+                                 GroupName="ModoFiltro"
+                                 IsEnabled="{Binding IsFiltrable}"
+                                 IsChecked="{Binding ModoFiltroSeleccionado, Converter={StaticResource InverseBoolConverter}}" />
+
+                </StackLayout>
+                
+                
             </HorizontalStackLayout>
             
 

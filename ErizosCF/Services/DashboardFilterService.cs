@@ -144,5 +144,31 @@ public partial class DashboardFilterService : ObservableObject
         FiltrosCambiaron?.Invoke();
     }
 
+    public void Reset()
+    {
+        Curso1Seleccionado = true;
+        Curso2Seleccionado = true;
+        Curso3Seleccionado = true;
+
+        Hombres = true;
+        Mujeres = true;
+
+        Newbie = true;
+        Pupil = true;
+        Specialist = true;
+        Expert = true;
+        CandidateMaster = true;
+        Master = true;
+        InternationalMaster = true;
+        GrandMaster = true;
+        InternationalGrandMaster = true;
+        LegendaryGrandMaster = true;
+
+        Icpc = true;
+        Excelente = true;
+        Normal = true;
+        Riesgo = true;
+    }
+
     public event Action FiltrosCambiaron;
 }

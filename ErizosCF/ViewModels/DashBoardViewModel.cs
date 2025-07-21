@@ -2,9 +2,12 @@
 using CommunityToolkit.Mvvm.Input;
 using ErizosCF.Models;
 using ErizosCF.Services;
+using Mysqlx.Expr;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Diagnostics.Metrics;
 using System.Linq;
+using static Org.BouncyCastle.Bcpg.Attr.ImageAttrib;
 
 namespace ErizosCF.ViewModels
 {
@@ -16,7 +19,7 @@ namespace ErizosCF.ViewModels
         public Escuela EscuelaFiltros { get; }
 
         [ObservableProperty]
-        private bool _isFiltrable;
+        private bool _isFiltrable = false;
 
         /*
         public bool IsNotFiltrable => !IsFiltrable;
@@ -51,12 +54,17 @@ namespace ErizosCF.ViewModels
 
         [ObservableProperty]
         ObservableCollection<Escuela> _escuelasDisponibles;
+
+        [ObservableProperty]
+        private bool modoFiltroSeleccionado = false; // "Estático" o "Dinámico" || true o false
+
+        private bool modoCargar = false;
         public DashBoardViewModel(DashboardFilterService filtros)
         {
             _cfService = new CFService();
 
             Filtros = filtros;
-            Filtros.FiltrosCambiaron += AplicarFiltros;
+            Filtros.FiltrosCambiaron += () => AplicarFiltros().SafeFireAndForget();
 
             CargarEscuelasAsync();
         }
@@ -74,7 +82,7 @@ namespace ErizosCF.ViewModels
                     EstaSeleccionada = true
                 };
 
-                escuela.FiltrosCambiaron += AplicarFiltros;
+                escuela.FiltrosCambiaron += () => AplicarFiltros().SafeFireAndForget();
 
                 return escuela;
             });
@@ -82,13 +90,17 @@ namespace ErizosCF.ViewModels
             EscuelasDisponibles = new ObservableCollection<Escuela>(lista);
         }
 
-
         [RelayCommand]
         private async Task CargarResumenUsuarios()
         {
             try
             {
+                Filtros.Reset();
+                ResetEscuelas();
+
                 IsFiltrable = false;
+                ModoFiltroSeleccionado = false;
+
                 UsuariosResumen.Clear();
                 CalcularEncabezadosSemanales();
                 DatosCargados = false;
@@ -115,73 +127,70 @@ namespace ErizosCF.ViewModels
 
                 TodosUsuariosResumen = UsuariosResumen;
                 IsFiltrable = true;
+                ModoFiltroSeleccionado = true;
             }
             catch (Exception ex)
             {
                 Debug.WriteLine($"Error: {ex.Message}");
                 DatosCargados = false;
                 IsFiltrable = false;
+                ModoFiltroSeleccionado = false;
             }
         }
 
-        private async void AplicarFiltros()
+        private async Task AplicarFiltrosDinamicos()
         {
+            if (ModoFiltroSeleccionado) return;
             IsFiltrable = false;
+            await Task.Delay(50);
 
             try
             {
-                if (TodosUsuariosResumen == null || !TodosUsuariosResumen.Any()) return;
-
-                Debug.WriteLine("Aplicando Filtros");
-
-                var cursosSeleccionados = new List<int>();
-                if (Filtros.Curso1Seleccionado) cursosSeleccionados.Add(1);
-                if (Filtros.Curso2Seleccionado) cursosSeleccionados.Add(2);
-                if (Filtros.Curso3Seleccionado) cursosSeleccionados.Add(3);
-
-                var sexosSelexionados = new List<string>();
-                if (Filtros.Hombres) sexosSelexionados.Add("M");
-                if (Filtros.Mujeres) sexosSelexionados.Add("F");
-
-                var rangosSeleccionados = new List<int>();
-                if (Filtros.Newbie) rangosSeleccionados.Add(0);                  
-                if (Filtros.Pupil) rangosSeleccionados.Add(1);               
-                if (Filtros.Specialist) rangosSeleccionados.Add(2);            
-                if (Filtros.Expert) rangosSeleccionados.Add(3);                 
-                if (Filtros.CandidateMaster) rangosSeleccionados.Add(4);         
-                if (Filtros.Master) rangosSeleccionados.Add(5);                 
-                if (Filtros.InternationalMaster) rangosSeleccionados.Add(6);     
-                if (Filtros.GrandMaster) rangosSeleccionados.Add(7);          
-                if (Filtros.InternationalGrandMaster) rangosSeleccionados.Add(8);
-                if (Filtros.LegendaryGrandMaster) rangosSeleccionados.Add(9);
-
-                var estadoSeleccionado = new List<string>();
-                if (Filtros.Icpc) estadoSeleccionado.Add("ICPC");
-                if (Filtros.Excelente) estadoSeleccionado.Add("EXCELENTE");
-                if (Filtros.Normal) estadoSeleccionado.Add("NORMAL");
-                if (Filtros.Riesgo) estadoSeleccionado.Add("RIESGO");
-
-                var escuelasSeleccionadas = new List<int>();
-                foreach(var esc in EscuelasDisponibles)
+                var filtrados = await Task.Run(() =>
                 {
-                    if (esc.EstaSeleccionada) escuelasSeleccionadas.Add(esc.Id);
-                }
+                    var cursosSeleccionados = new List<int>();
+                    if (Filtros.Curso1Seleccionado) cursosSeleccionados.Add(1);
+                    if (Filtros.Curso2Seleccionado) cursosSeleccionados.Add(2);
+                    if (Filtros.Curso3Seleccionado) cursosSeleccionados.Add(3);
 
-                foreach(var e in escuelasSeleccionadas)
-                {
-                    Debug.WriteLine($"Datos: {e}");
-                }
+                    var sexosSeleccionados = new List<string>();
+                    if (Filtros.Hombres) sexosSeleccionados.Add("M");
+                    if (Filtros.Mujeres) sexosSeleccionados.Add("F");
 
-                var filtrados = TodosUsuariosResumen
-                    .AsParallel()
-                    .Where(u => 
-                            cursosSeleccionados.Contains(u.Curso) && 
-                            sexosSelexionados.Contains(u.Sexo) &&
+                    var rangosSeleccionados = new List<int>();
+                    if (Filtros.Newbie) rangosSeleccionados.Add(0);
+                    if (Filtros.Pupil) rangosSeleccionados.Add(1);
+                    if (Filtros.Specialist) rangosSeleccionados.Add(2);
+                    if (Filtros.Expert) rangosSeleccionados.Add(3);
+                    if (Filtros.CandidateMaster) rangosSeleccionados.Add(4);
+                    if (Filtros.Master) rangosSeleccionados.Add(5);
+                    if (Filtros.InternationalMaster) rangosSeleccionados.Add(6);
+                    if (Filtros.GrandMaster) rangosSeleccionados.Add(7);
+                    if (Filtros.InternationalGrandMaster) rangosSeleccionados.Add(8);
+                    if (Filtros.LegendaryGrandMaster) rangosSeleccionados.Add(9);
+
+                    var estadoSeleccionado = new List<string>();
+                    if (Filtros.Icpc) estadoSeleccionado.Add("ICPC");
+                    if (Filtros.Excelente) estadoSeleccionado.Add("EXCELENTE");
+                    if (Filtros.Normal) estadoSeleccionado.Add("NORMAL");
+                    if (Filtros.Riesgo) estadoSeleccionado.Add("RIESGO");
+
+                    var escuelasSeleccionadas = EscuelasDisponibles
+                        .Where(e => e.EstaSeleccionada)
+                        .Select(e => e.Id)
+                        .ToList();
+
+                    return TodosUsuariosResumen
+                        .AsParallel()
+                        .Where(u =>
+                            cursosSeleccionados.Contains(u.Curso) &&
+                            sexosSeleccionados.Contains(u.Sexo) &&
                             rangosSeleccionados.Contains(UserProfile.ObtenerRangoDesdeRating(u.CurrentRating)) &&
                             estadoSeleccionado.Contains(u.Estado) &&
                             escuelasSeleccionadas.Contains(u.IdEscuela)
-                    )
-                    .ToList();
+                        )
+                        .ToList();
+                });
 
                 UsuariosResumen = new ObservableCollection<UserProfile>(filtrados);
             }
@@ -192,13 +201,78 @@ namespace ErizosCF.ViewModels
 
             finally
             {
-                await Task.Delay(300);
+                IsFiltrable = true;
+            }
+        }
+
+        [RelayCommand]
+        private async Task AplicarFiltrosEstaticos()
+        {
+            IsFiltrable = false;
+            await Task.Delay(50);
+
+            try
+            {
+                var filtrados = await Task.Run(() =>
+                {
+                    var cursosSeleccionados = new List<int>();
+                    if (Filtros.Curso1Seleccionado) cursosSeleccionados.Add(1);
+                    if (Filtros.Curso2Seleccionado) cursosSeleccionados.Add(2);
+                    if (Filtros.Curso3Seleccionado) cursosSeleccionados.Add(3);
+
+                    var sexosSeleccionados = new List<string>();
+                    if (Filtros.Hombres) sexosSeleccionados.Add("M");
+                    if (Filtros.Mujeres) sexosSeleccionados.Add("F");
+
+                    var rangosSeleccionados = new List<int>();
+                    if (Filtros.Newbie) rangosSeleccionados.Add(0);
+                    if (Filtros.Pupil) rangosSeleccionados.Add(1);
+                    if (Filtros.Specialist) rangosSeleccionados.Add(2);
+                    if (Filtros.Expert) rangosSeleccionados.Add(3);
+                    if (Filtros.CandidateMaster) rangosSeleccionados.Add(4);
+                    if (Filtros.Master) rangosSeleccionados.Add(5);
+                    if (Filtros.InternationalMaster) rangosSeleccionados.Add(6);
+                    if (Filtros.GrandMaster) rangosSeleccionados.Add(7);
+                    if (Filtros.InternationalGrandMaster) rangosSeleccionados.Add(8);
+                    if (Filtros.LegendaryGrandMaster) rangosSeleccionados.Add(9);
+
+                    var estadoSeleccionado = new List<string>();
+                    if (Filtros.Icpc) estadoSeleccionado.Add("ICPC");
+                    if (Filtros.Excelente) estadoSeleccionado.Add("EXCELENTE");
+                    if (Filtros.Normal) estadoSeleccionado.Add("NORMAL");
+                    if (Filtros.Riesgo) estadoSeleccionado.Add("RIESGO");
+
+                    var escuelasSeleccionadas = EscuelasDisponibles
+                        .Where(e => e.EstaSeleccionada)
+                        .Select(e => e.Id)
+                        .ToList();
+
+                    return TodosUsuariosResumen
+                        .AsParallel()
+                        .Where(u =>
+                            cursosSeleccionados.Contains(u.Curso) &&
+                            sexosSeleccionados.Contains(u.Sexo) &&
+                            rangosSeleccionados.Contains(UserProfile.ObtenerRangoDesdeRating(u.CurrentRating)) &&
+                            estadoSeleccionado.Contains(u.Estado) &&
+                            escuelasSeleccionadas.Contains(u.IdEscuela)
+                        )
+                        .ToList();
+                });
+
+                UsuariosResumen = new ObservableCollection<UserProfile>(filtrados);
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine($"Error: {e}");
+            }
+
+            finally
+            {
                 IsFiltrable = true;
             }
         }
 
         // segmentar los problemas
-
         private void CalcularEncabezadosSemanales()
         {
             TimeSpan diferencia = FechaFin.Subtract(FechaInicio);
@@ -213,6 +287,14 @@ namespace ErizosCF.ViewModels
                     return $"{inicioSemana:dd/MM} - {finSemana:dd/MM}";
                     })
                 .ToList();
+        }
+
+        public void ResetEscuelas()
+        {
+            foreach(var e in EscuelasDisponibles)
+            {
+                e.EstaSeleccionada = true;
+            }
         }
     }
 }
