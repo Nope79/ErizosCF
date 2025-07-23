@@ -12,6 +12,7 @@ namespace ErizosCF.ViewModels
 
         private readonly CFService _cfService;
         public DashboardFilterService Filtros { get; }
+        public DashboardSortService Ordenador { get; }
         public Escuela EscuelaFiltros { get; }
 
         [ObservableProperty]
@@ -24,7 +25,7 @@ namespace ErizosCF.ViewModels
         private ObservableCollection<UserProfile> _usuariosResumen = new();
 
         [ObservableProperty]
-        private DateTime _fechaInicio = DateTime.Now.AddMonths(-1); 
+        private DateTime _fechaInicio = DateTime.Now.AddMonths(-1);
 
         [ObservableProperty]
         private DateTime _fechaFin = DateTime.Now;
@@ -56,7 +57,94 @@ namespace ErizosCF.ViewModels
             Filtros = filtros;
             Filtros.FiltrosCambiaron += () => AplicarFiltrosDinamicos().SafeFireAndForget();
 
-            CargarEscuelasAsync();
+            CargarEscuelasAsync().SafeFireAndForget();
+        }
+
+        public enum SortField
+        {
+            Usuario,
+            Nombre,
+            Curso,
+            Escuela,
+            Rating,
+            Team,
+            Individual,
+            Unrated
+        }
+
+        public enum SortDirection
+        {
+            Asc,
+            Desc
+        }
+
+        [ObservableProperty]
+        private SortField selectedSortField = SortField.Usuario;
+
+        [ObservableProperty]
+        private SortDirection selectedSortDirection = SortDirection.Asc;
+
+        public Array SortFields => Enum.GetValues(typeof(SortField));
+        public Array SortDirections => Enum.GetValues(typeof(SortDirection));
+
+
+        partial void OnSelectedSortFieldChanged(SortField value)
+        {
+            OrdenarUsuarios();
+        }
+
+        partial void OnSelectedSortDirectionChanged(SortDirection value)
+        {
+            OrdenarUsuarios();
+        }
+
+        private void OrdenarUsuarios()
+        {
+            try
+            {
+                if (UsuariosResumen == null || UsuariosResumen.Count == 0)
+                    return;
+
+                var usuarios = UsuariosResumen.AsEnumerable();
+
+                usuarios = (SelectedSortField, SelectedSortDirection) switch
+                {
+                    (SortField.Usuario, SortDirection.Asc) => usuarios.OrderBy(u => u.Handle),
+                    (SortField.Usuario, SortDirection.Desc) => usuarios.OrderByDescending(u => u.Handle),
+
+                    (SortField.Nombre, SortDirection.Asc) => usuarios.OrderBy(u => u.FullName),
+                    (SortField.Nombre, SortDirection.Desc) => usuarios.OrderByDescending(u => u.FullName),
+
+                    (SortField.Curso, SortDirection.Asc) => usuarios.OrderBy(u => u.Curso),
+                    (SortField.Curso, SortDirection.Desc) => usuarios.OrderByDescending(u => u.Curso),
+
+                    (SortField.Escuela, SortDirection.Asc) => usuarios.OrderBy(u => u.NombreEscuela),
+                    (SortField.Escuela, SortDirection.Desc) => usuarios.OrderByDescending(u => u.NombreEscuela),
+
+                    (SortField.Rating, SortDirection.Asc) => usuarios.OrderBy(u => u.CurrentRating),
+                    (SortField.Rating, SortDirection.Desc) => usuarios.OrderByDescending(u => u.CurrentRating),
+
+                    (SortField.Individual, SortDirection.Asc) => usuarios.OrderBy(u => u.TotalSolved - u.Team),
+                    (SortField.Individual, SortDirection.Desc) => usuarios.OrderByDescending(u => u.TotalSolved - u.Team),
+
+                    (SortField.Team, SortDirection.Asc) => usuarios.OrderBy(u => u.Team),
+                    (SortField.Team, SortDirection.Desc) => usuarios.OrderByDescending(u => u.Team),
+
+                    (SortField.Unrated, SortDirection.Asc) =>
+                        usuarios.OrderBy(u => u.ProblemasPorDificultad.ContainsKey(-1) ? u.ProblemasPorDificultad[-1] : 0),
+
+                    (SortField.Unrated, SortDirection.Desc) =>
+                        usuarios.OrderByDescending(u => u.ProblemasPorDificultad.ContainsKey(-1) ? u.ProblemasPorDificultad[-1] : 0),
+
+                    _ => usuarios
+                };
+
+                UsuariosResumen = new ObservableCollection<UserProfile>(usuarios);
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine($"Error: {e}");
+            }
         }
 
         private async Task CargarEscuelasAsync()
@@ -175,7 +263,7 @@ namespace ErizosCF.ViewModels
 
                 else
                 {
-                    EncabezadosSemanas = null;
+                    EncabezadosSemanas.Clear();
                     await Shell.Current.DisplayAlert("Alerta", "La fecha de inicio no puede ser mayor a la fecha fin.", "OK");
                     IsFiltrable = false;
                     ModoFiltroSeleccionado = true;
@@ -187,6 +275,8 @@ namespace ErizosCF.ViewModels
                 Debug.WriteLine($"Error {e}");
             }
         }
+
+        
 
         private async Task UsuariosFiltro()
         {
@@ -316,7 +406,7 @@ namespace ErizosCF.ViewModels
 
             else
             {
-                EncabezadosSemanas = null;
+                EncabezadosSemanas.Clear();
                 await Shell.Current.DisplayAlert("Alerta", "La fecha de inicio no puede ser mayor a la fecha fin.", "OK");
                 IsFiltrable = false;
             }

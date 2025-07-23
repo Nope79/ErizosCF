@@ -167,8 +167,25 @@
                                  IsChecked="{Binding ModoFiltroSeleccionado, Converter={StaticResource InverseBoolConverter}}" />
 
                 </StackLayout>
-                
-                
+
+
+                <StackLayout Padding="10">
+
+                    <Picker
+    Title="Campo de orden"
+    ItemsSource="{Binding SortFields}"
+    SelectedItem="{Binding SelectedSortField}"
+    />
+
+                    <Picker
+    Title="Dirección de orden"
+    ItemsSource="{Binding SortDirections}"
+    SelectedItem="{Binding SelectedSortDirection}"
+    />
+                </StackLayout>
+
+
+
             </HorizontalStackLayout>
             
 
