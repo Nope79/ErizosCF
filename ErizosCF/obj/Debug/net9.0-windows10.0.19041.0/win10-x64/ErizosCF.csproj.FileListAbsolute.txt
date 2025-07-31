@@ -533,3 +533,14 @@ C:\Users\nopes\source\repos\ErizosCF\ErizosCF\obj\Debug\net9.0-windows10.0.19041
 C:\Users\nopes\source\repos\ErizosCF\ErizosCF\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\qualifiers.txt
 C:\Users\nopes\source\repos\ErizosCF\ErizosCF\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 C:\Users\nopes\source\repos\ErizosCF\ErizosCF\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
+C:\Users\nopes\source\repos\ErizosCF\ErizosCF\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\CommunityToolkit.Maui.dll
+C:\Users\nopes\source\repos\ErizosCF\ErizosCF\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\CommunityToolkit.Maui.Core.dll
+C:\Users\nopes\source\repos\ErizosCF\ErizosCF\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\System.Speech.dll
+C:\Users\nopes\source\repos\ErizosCF\ErizosCF\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\ClosedXML.dll
+C:\Users\nopes\source\repos\ErizosCF\ErizosCF\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\ClosedXML.Parser.dll
+C:\Users\nopes\source\repos\ErizosCF\ErizosCF\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\DocumentFormat.OpenXml.dll
+C:\Users\nopes\source\repos\ErizosCF\ErizosCF\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\DocumentFormat.OpenXml.Framework.dll
+C:\Users\nopes\source\repos\ErizosCF\ErizosCF\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\ExcelNumberFormat.dll
+C:\Users\nopes\source\repos\ErizosCF\ErizosCF\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\RBush.dll
+C:\Users\nopes\source\repos\ErizosCF\ErizosCF\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\SixLabors.Fonts.dll
+C:\Users\nopes\source\repos\ErizosCF\ErizosCF\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\System.IO.Packaging.dll

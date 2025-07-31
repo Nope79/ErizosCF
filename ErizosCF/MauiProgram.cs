@@ -1,4 +1,5 @@
-﻿using ErizosCF.Services;
+﻿using CommunityToolkit.Maui;
+using ErizosCF.Services;
 using ErizosCF.ViewModels;
 using ErizosCF.Views;
 using Microsoft.Extensions.Logging;
@@ -16,7 +17,8 @@ namespace ErizosCF
             builder.Services.AddTransient<DashBoardPage>();
 
             builder
-                .UseMauiApp<App>()    
+                .UseMauiApp<App>()
+                .UseMauiCommunityToolkit()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
