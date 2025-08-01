@@ -151,7 +151,7 @@ namespace ErizosCF.ViewModels
         }
 
         private async Task CargarEscuelasAsync()
-        {
+        { 
             try
             {
                 var query = await Escuela.ObtenerEscuelasAsync();

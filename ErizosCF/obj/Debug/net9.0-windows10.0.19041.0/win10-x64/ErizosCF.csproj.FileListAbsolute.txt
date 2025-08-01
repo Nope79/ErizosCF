@@ -544,3 +544,5 @@ C:\Users\nopes\source\repos\ErizosCF\ErizosCF\bin\Debug\net9.0-windows10.0.19041
 C:\Users\nopes\source\repos\ErizosCF\ErizosCF\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\RBush.dll
 C:\Users\nopes\source\repos\ErizosCF\ErizosCF\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\SixLabors.Fonts.dll
 C:\Users\nopes\source\repos\ErizosCF\ErizosCF\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\System.IO.Packaging.dll
+C:\Users\nopes\source\repos\ErizosCF\ErizosCF\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\sonic.scale-100.png
+C:\Users\nopes\source\repos\ErizosCF\ErizosCF\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\sonic.scale-100.png

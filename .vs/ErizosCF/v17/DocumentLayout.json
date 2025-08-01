@@ -9,6 +9,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\viewmodels\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\viewmodels\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\resources\\styles\\colors.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\resources\\styles\\colors.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,8 +22,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Colors.xaml",
+              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Resources\\Styles\\Colors.xaml",
+              "RelativeDocumentMoniker": "ErizosCF\\Resources\\Styles\\Colors.xaml",
+              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Resources\\Styles\\Colors.xaml",
+              "RelativeToolTip": "ErizosCF\\Resources\\Styles\\Colors.xaml",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAABIAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-08-01T02:44:58.932Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -28,7 +45,7 @@
               "RelativeDocumentMoniker": "ErizosCF\\Views\\DashBoardPage.xaml",
               "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Views\\DashBoardPage.xaml",
               "RelativeToolTip": "ErizosCF\\Views\\DashBoardPage.xaml",
-              "ViewState": "AgIAAJkBAAAAAAAAAAAowMgBAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-07-31T15:05:38.21Z",
               "EditorCaption": ""
@@ -41,7 +58,7 @@
               "RelativeDocumentMoniker": "ErizosCF\\ViewModels\\DashBoardViewModel.cs",
               "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\ViewModels\\DashBoardViewModel.cs",
               "RelativeToolTip": "ErizosCF\\ViewModels\\DashBoardViewModel.cs",
-              "ViewState": "AgIAAJoAAAAAAAAAAAAgwLUAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAYwLgAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-31T15:05:33.014Z",
               "EditorCaption": ""

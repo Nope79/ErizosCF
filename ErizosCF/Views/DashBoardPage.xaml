@@ -6,6 +6,12 @@
              xmlns:services="clr-namespace:ErizosCF.Services"
              Title="ErizosCF Club">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="sonic.png"
+                 Order="Primary"
+                 Priority="0"/>
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Resources>
         <ResourceDictionary>
             <services:InverseBoolConverter x:Key="InverseBoolConverter" />
@@ -41,7 +47,7 @@
             </Style>
 
             <Style TargetType="CheckBox">
-                <Setter Property="Color" Value="{StaticResource Primary}"/>
+                <Setter Property="Color" Value="{StaticResource Secondary}"/>
             </Style>
 
             <Style TargetType="RadioButton">
@@ -50,408 +56,443 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <ScrollView>
-        <VerticalStackLayout Spacing="20" Padding="10">
+    <StackLayout>
 
-            <!-- Filtros de fecha -->
-            <Frame>
-                <VerticalStackLayout Spacing="10">
-                    <Label Text="Rango de fechas" FontAttributes="Bold" FontSize="16"/>
+        <HorizontalStackLayout>
+            <VerticalStackLayout Spacing="10" Padding="10,0,10,0">
 
-                    <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
-                        <DatePicker Date="{Binding FechaInicio}"
-                                    WidthRequest="150"
-                                    HorizontalOptions="Center"/>
-                        <Label Text="a" 
-                               VerticalOptions="Center"/>
-                        <DatePicker Date="{Binding FechaFin}" 
-                                    WidthRequest="150"
-                                    HorizontalOptions="Center"/>
-                    </HorizontalStackLayout>
 
-                    <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
-                        <Button Text="Cargar Datos" 
-                                Command="{Binding CargarResumenUsuariosCommand}"
-                                WidthRequest="150"
-                                Style="{StaticResource PrimaryButton}"/>
+                <!-- Tabla de problemas por dificultad -->
+                <Frame HeightRequest="375" WidthRequest="1100" HorizontalOptions="Start">
+                    <VerticalStackLayout Spacing="0">
+                        <Label Text="Problemas Realizados (Dificultad)" FontAttributes="Bold" FontSize="16"/>
 
-                        <Button Text="Filtrar Datos" 
-                                Command="{Binding AplicarFiltrosEstaticosCommand}"
-                                IsEnabled="{Binding ModoFiltroSeleccionado}"
-                                WidthRequest="150"
-                                Style="{StaticResource SecondaryButton}"/>
-                    </HorizontalStackLayout>
-                </VerticalStackLayout>
-            </Frame>
-
-            <!-- Filtros avanzados -->
-            <Frame>
-                <VerticalStackLayout Spacing="15">
-                    <Label Text="Filtros Avanzados" FontAttributes="Bold" FontSize="16"/>
-
-                    <ScrollView Orientation="Horizontal">
-                        <HorizontalStackLayout Spacing="20">
-                            <!-- Filtros de cursos -->
-                            <VerticalStackLayout Spacing="5">
-                                <Label Text="Cursos" FontAttributes="Bold"/>
-                                <HorizontalStackLayout>
-                                    <CheckBox IsChecked="{Binding Filtros.Curso1Seleccionado}" IsEnabled="{Binding IsFiltrable, Mode=OneWay}" Scale="0.65"/>
-                                    <Label Text="Curso 1" VerticalOptions="Center" Scale="0.9"/>
-                                </HorizontalStackLayout>
-                                <HorizontalStackLayout>
-                                    <CheckBox IsChecked="{Binding Filtros.Curso2Seleccionado}" IsEnabled="{Binding IsFiltrable, Mode=OneWay}" Scale="0.65"/>
-                                    <Label Text="Curso 2" VerticalOptions="Center" Scale="0.9"/>
-                                </HorizontalStackLayout>
-                                <HorizontalStackLayout>
-                                    <CheckBox IsChecked="{Binding Filtros.Curso3Seleccionado}" IsEnabled="{Binding IsFiltrable, Mode=OneWay}" Scale="0.65"/>
-                                    <Label Text="Curso 3" VerticalOptions="Center" Scale="0.9"/>
-                                </HorizontalStackLayout>
-                            </VerticalStackLayout>
-
-                            <!-- Filtros de género -->
-                            <VerticalStackLayout Spacing="5">
-                                <Label Text="Género" FontAttributes="Bold"/>
-                                <HorizontalStackLayout>
-                                    <CheckBox IsChecked="{Binding Filtros.Hombres}" IsEnabled="{Binding IsFiltrable, Mode=OneWay}" Scale="0.65"/>
-                                    <Label Text="Hombres" VerticalOptions="Center" Scale="0.9"/>
-                                </HorizontalStackLayout>
-                                <HorizontalStackLayout>
-                                    <CheckBox IsChecked="{Binding Filtros.Mujeres}" IsEnabled="{Binding IsFiltrable, Mode=OneWay}" Scale="0.65"/>
-                                    <Label Text="Mujeres" VerticalOptions="Center" Scale="0.9"/>
-                                </HorizontalStackLayout>
-                            </VerticalStackLayout>
-
-                            <!-- Filtros de nivel -->
-                            <VerticalStackLayout Spacing="5">
-                                <Label Text="Nivel de Rating" FontAttributes="Bold"/>
-                                <HorizontalStackLayout>
-                                    <CheckBox IsChecked="{Binding Filtros.Newbie}" IsEnabled="{Binding IsFiltrable, Mode=OneWay}" Scale="0.65" />
-                                    <Label Text="Newbie (0-1199)" VerticalOptions="Center" Scale="0.9"/>
-                                </HorizontalStackLayout>
-                                
-                                <HorizontalStackLayout>
-                                    <CheckBox IsChecked="{Binding Filtros.Pupil}" IsEnabled="{Binding IsFiltrable, Mode=OneWay}" Scale="0.65"/>
-                                    <Label Text="Pupil (1200-1399)" VerticalOptions="Center" Scale="0.9"/>
-                                </HorizontalStackLayout>
-                                
-                                <HorizontalStackLayout>
-                                    <CheckBox IsChecked="{Binding Filtros.Specialist}" IsEnabled="{Binding IsFiltrable, Mode=OneWay}" Scale="0.65"/>
-                                    <Label Text="Specialist (1400-1599)" VerticalOptions="Center" Scale="0.9"/>
-                                </HorizontalStackLayout>
-                                
-                                <HorizontalStackLayout>
-                                    <CheckBox IsChecked="{Binding Filtros.Expert}" IsEnabled="{Binding IsFiltrable, Mode=OneWay}" Scale="0.65"/>
-                                    <Label Text="Expert (1600-1899)" VerticalOptions="Center" Scale="0.9"/>
-                                </HorizontalStackLayout>
-                                
-                                <HorizontalStackLayout>
-                                    <CheckBox IsChecked="{Binding Filtros.CandidateMaster}" IsEnabled="{Binding IsFiltrable, Mode=OneWay}" Scale="0.65"/>
-                                    <Label Text="Candidate Master (1900-2099)" VerticalOptions="Center" Scale="0.9"/>
-                                </HorizontalStackLayout>
-                                
-                                <HorizontalStackLayout>
-                                    <CheckBox IsChecked="{Binding Filtros.Master}" IsEnabled="{Binding IsFiltrable, Mode=OneWay}" Scale="0.65"/>
-                                    <Label Text="Master (2100-2299)" VerticalOptions="Center" Scale="0.9"/>
-                                </HorizontalStackLayout>
-                                
-                                <HorizontalStackLayout>
-                                    <CheckBox IsChecked="{Binding Filtros.InternationalMaster}" IsEnabled="{Binding IsFiltrable, Mode=OneWay}" Scale="0.65"/>
-                                    <Label Text="International Master (2300-2399)" VerticalOptions="Center" Scale="0.9"/>
-                                </HorizontalStackLayout>
-                                
-                                <HorizontalStackLayout>
-                                    <CheckBox IsChecked="{Binding Filtros.GrandMaster}" IsEnabled="{Binding IsFiltrable, Mode=OneWay}" Scale="0.65"/>
-                                    <Label Text="Grandmaster (2400-2599)" VerticalOptions="Center" Scale="0.9"/>
-                                </HorizontalStackLayout>
-                               
-                                <HorizontalStackLayout>
-                                    <CheckBox IsChecked="{Binding Filtros.InternationalGrandMaster}" IsEnabled="{Binding IsFiltrable, Mode=OneWay}" Scale="0.65"/>
-                                    <Label Text="Intl Grandmaster (2600-2999)" VerticalOptions="Center" Scale="0.9"/>
-                                </HorizontalStackLayout>
-                                
-                                <HorizontalStackLayout>
-                                    <CheckBox IsChecked="{Binding Filtros.LegendaryGrandMaster}" IsEnabled="{Binding IsFiltrable, Mode=OneWay}" Scale="0.65"/>
-                                    <Label Text="Legendary Grandmaster (≥3000)" VerticalOptions="Center" Scale="0.9"/>
-                                </HorizontalStackLayout>
-                            </VerticalStackLayout>
-
-                            <!-- Filtros de categoría -->
-                            <VerticalStackLayout Spacing="5">
-                                <Label Text="Categoría" FontAttributes="Bold"/>
-                                <HorizontalStackLayout>
-                                    <CheckBox IsChecked="{Binding Filtros.Icpc}" IsEnabled="{Binding IsFiltrable, Mode=OneWay}" Scale="0.65"/>
-                                    <Label Text="ICPC" VerticalOptions="Center" Scale="0.9"/>
-                                </HorizontalStackLayout>
-                                <HorizontalStackLayout>
-                                    <CheckBox IsChecked="{Binding Filtros.Excelente}" IsEnabled="{Binding IsFiltrable, Mode=OneWay}" Scale="0.65"/>
-                                    <Label Text="Excelente" VerticalOptions="Center" Scale="0.9"/>
-                                </HorizontalStackLayout>
-                                <HorizontalStackLayout>
-                                    <CheckBox IsChecked="{Binding Filtros.Normal}" IsEnabled="{Binding IsFiltrable, Mode=OneWay}" Scale="0.65"/>
-                                    <Label Text="Normal" VerticalOptions="Center" Scale="0.9"/>
-                                </HorizontalStackLayout>
-                                <HorizontalStackLayout>
-                                    <CheckBox IsChecked="{Binding Filtros.Riesgo}" IsEnabled="{Binding IsFiltrable, Mode=OneWay}" Scale="0.65"/>
-                                    <Label Text="Riesgo" VerticalOptions="Center" Scale="0.9"/>
-                                </HorizontalStackLayout>
-                            </VerticalStackLayout>
-
-                            <!-- Filtros de escuelas -->
-                            <VerticalStackLayout Spacing="5" WidthRequest="200">
-                                <Label Text="Escuelas" FontAttributes="Bold"/>
-                                <CollectionView ItemsSource="{Binding EscuelasDisponibles}" HeightRequest="150">
-                                    <CollectionView.ItemTemplate>
-                                        <DataTemplate>
-                                            <HorizontalStackLayout Spacing="5" VerticalOptions="Center">
-                                                <CheckBox IsChecked="{Binding EstaSeleccionada}" 
-                                                          Scale="0.65"
-                                                          IsEnabled="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.IsFiltrable}"/>
-                                                <Label Text="{Binding Nombre}" VerticalOptions="Center" Scale="0.9"/>
-                                            </HorizontalStackLayout>
-                                        </DataTemplate>
-                                    </CollectionView.ItemTemplate>
-                                </CollectionView>
-                            </VerticalStackLayout>
-
-                            <!-- Modo de filtro -->
-                            <VerticalStackLayout Spacing="5">
-                                <Label Text="Modo de Filtro" FontAttributes="Bold"/>
-                                <RadioButton Content="Modo Estático"
-                                             Scale="0.8"
-                                             GroupName="ModoFiltro"
-                                             IsEnabled="{Binding IsFiltrable}"
-                                             IsChecked="{Binding ModoFiltroSeleccionado}" />
-
-                                <RadioButton Content="Modo Dinámico"
-                                             Scale="0.8"
-                                             GroupName="ModoFiltro"
-                                             IsEnabled="{Binding IsFiltrable}"
-                                             IsChecked="{Binding ModoFiltroSeleccionado, Converter={StaticResource InverseBoolConverter}}" />
-                            </VerticalStackLayout>
-
-                            <!-- Ordenamiento -->
-                            <VerticalStackLayout Spacing="5">
-                                <Label Text="Sorting" FontAttributes="Bold" />
-                                <Picker Title="Campo de orden"
-                                        Scale="0.8"
-                                        ItemsSource="{Binding SortFields}"
-                                        SelectedItem="{Binding SelectedSortField}"/>
-
-                                <Picker Title="Dirección de orden"
-                                        Scale="0.8"
-                                        ItemsSource="{Binding SortDirections}"
-                                        SelectedItem="{Binding SelectedSortDirection}"/>
-                            </VerticalStackLayout>
-                        </HorizontalStackLayout>
-                    </ScrollView>
-                </VerticalStackLayout>
-            </Frame>
-
-            <!-- Tabla de problemas por dificultad -->
-            <Frame>
-                <VerticalStackLayout Spacing="10">
-                    <Label Text="Problemas Realizados (Dificultad)" FontAttributes="Bold" FontSize="16"/>
-
-                    <ScrollView x:Name="HeaderScrollView1"
+                        <ScrollView x:Name="HeaderScrollView1"
                             Orientation="Horizontal"
                             IsEnabled="{Binding EncabezadosHabilitados}"
                             Scrolled="OnHeaderScrollViewScrolled1"
                             HorizontalScrollBarVisibility="Never">
-                        <Grid ColumnDefinitions="200,260,50,100,100,60,50,70,60,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50"
+                            <Grid ColumnDefinitions="200,260,50,100,100,60,50,70,60,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50"
                           Padding="5"
                           HorizontalOptions="Start"
                           BackgroundColor="{StaticResource Black}">
 
-                            <Label Text="Usuario" Grid.Column="0" FontAttributes="Bold" FontSize="12"/>
-                            <Label Text="Nombre" Grid.Column="1" FontAttributes="Bold" FontSize="12"/>
-                            <Label Text="Curso" Grid.Column="2" FontAttributes="Bold" FontSize="12" HorizontalOptions="Center"/>
-                            <Label Text="Escuela" Grid.Column="3" FontAttributes="Bold" FontSize="12" HorizontalOptions="Center"/>
-                            <Label Text="Rating" Grid.Column="4" FontAttributes="Bold" FontSize="12" HorizontalOptions="Center"/>
-                            <Label Text="Solved" Grid.Column="5" FontAttributes="Bold" FontSize="12" HorizontalOptions="Center"/>
-                            <Label Text="Team" Grid.Column="6" FontAttributes="Bold" FontSize="12" HorizontalOptions="Center"/>
-                            <Label Text="Individual" Grid.Column="7" FontAttributes="Bold" FontSize="12" HorizontalOptions="Center"/>
-                            <Label Text="Unrated" Grid.Column="8" FontAttributes="Bold" FontSize="12" HorizontalOptions="Center"/>
+                                <Label Text="Usuario" Grid.Column="0" FontAttributes="Bold" FontSize="12"/>
+                                <Label Text="Nombre" Grid.Column="1" FontAttributes="Bold" FontSize="12"/>
+                                <Label Text="Curso" Grid.Column="2" FontAttributes="Bold" FontSize="12" HorizontalOptions="Center"/>
+                                <Label Text="Escuela" Grid.Column="3" FontAttributes="Bold" FontSize="12" HorizontalOptions="Center"/>
+                                <Label Text="Rating" Grid.Column="4" FontAttributes="Bold" FontSize="12" HorizontalOptions="Center"/>
+                                <Label Text="Solved" Grid.Column="5" FontAttributes="Bold" FontSize="12" HorizontalOptions="Center"/>
+                                <Label Text="Team" Grid.Column="6" FontAttributes="Bold" FontSize="12" HorizontalOptions="Center"/>
+                                <Label Text="Individual" Grid.Column="7" FontAttributes="Bold" FontSize="12" HorizontalOptions="Center"/>
+                                <Label Text="Unrated" Grid.Column="8" FontAttributes="Bold" FontSize="12" HorizontalOptions="Center"/>
 
-                            <Label Text="800" Grid.Column="9" FontAttributes="Bold" FontSize="12" HorizontalOptions="Center"/>
-                            <Label Text="900" Grid.Column="10" FontAttributes="Bold" FontSize="12" HorizontalOptions="Center"/>
-                            <Label Text="1000" FontAttributes="Bold" Grid.Column="11" FontSize="12" HorizontalOptions="Center"/>
-                            <Label Text="1100" FontAttributes="Bold" Grid.Column="12" FontSize="12" HorizontalOptions="Center"/>
-                            <Label Text="1200" FontAttributes="Bold" Grid.Column="13" FontSize="12" HorizontalOptions="Center"/>
-                            <Label Text="1300" FontAttributes="Bold" Grid.Column="14" FontSize="12" HorizontalOptions="Center"/>
-                            <Label Text="1400" FontAttributes="Bold" Grid.Column="15" FontSize="12" HorizontalOptions="Center"/>
-                            <Label Text="1500" FontAttributes="Bold" Grid.Column="16" FontSize="12" HorizontalOptions="Center"/>
-                            <Label Text="1600" FontAttributes="Bold" Grid.Column="17" FontSize="12" HorizontalOptions="Center"/>
-                            <Label Text="1700" FontAttributes="Bold" Grid.Column="18" FontSize="12" HorizontalOptions="Center"/>
-                            <Label Text="1800" FontAttributes="Bold" Grid.Column="19" FontSize="12" HorizontalOptions="Center"/>
-                            <Label Text="1900" FontAttributes="Bold" Grid.Column="20" FontSize="12" HorizontalOptions="Center"/>
-                            <Label Text="2000" FontAttributes="Bold" Grid.Column="21" FontSize="12" HorizontalOptions="Center"/>
-                            <Label Text="2100" FontAttributes="Bold" Grid.Column="22" FontSize="12" HorizontalOptions="Center"/>
-                            <Label Text="2200" FontAttributes="Bold" Grid.Column="23" FontSize="12" HorizontalOptions="Center"/>
-                            <Label Text="2300" FontAttributes="Bold" Grid.Column="24" FontSize="12" HorizontalOptions="Center"/>
-                            <Label Text="2400" FontAttributes="Bold" Grid.Column="25" FontSize="12" HorizontalOptions="Center"/>
-                            <Label Text="2500" FontAttributes="Bold" Grid.Column="26" FontSize="12" HorizontalOptions="Center"/>
-                        </Grid>
-                    </ScrollView>
+                                <Label Text="800" Grid.Column="9" FontAttributes="Bold" FontSize="12" HorizontalOptions="Center"/>
+                                <Label Text="900" Grid.Column="10" FontAttributes="Bold" FontSize="12" HorizontalOptions="Center"/>
+                                <Label Text="1000" FontAttributes="Bold" Grid.Column="11" FontSize="12" HorizontalOptions="Center"/>
+                                <Label Text="1100" FontAttributes="Bold" Grid.Column="12" FontSize="12" HorizontalOptions="Center"/>
+                                <Label Text="1200" FontAttributes="Bold" Grid.Column="13" FontSize="12" HorizontalOptions="Center"/>
+                                <Label Text="1300" FontAttributes="Bold" Grid.Column="14" FontSize="12" HorizontalOptions="Center"/>
+                                <Label Text="1400" FontAttributes="Bold" Grid.Column="15" FontSize="12" HorizontalOptions="Center"/>
+                                <Label Text="1500" FontAttributes="Bold" Grid.Column="16" FontSize="12" HorizontalOptions="Center"/>
+                                <Label Text="1600" FontAttributes="Bold" Grid.Column="17" FontSize="12" HorizontalOptions="Center"/>
+                                <Label Text="1700" FontAttributes="Bold" Grid.Column="18" FontSize="12" HorizontalOptions="Center"/>
+                                <Label Text="1800" FontAttributes="Bold" Grid.Column="19" FontSize="12" HorizontalOptions="Center"/>
+                                <Label Text="1900" FontAttributes="Bold" Grid.Column="20" FontSize="12" HorizontalOptions="Center"/>
+                                <Label Text="2000" FontAttributes="Bold" Grid.Column="21" FontSize="12" HorizontalOptions="Center"/>
+                                <Label Text="2100" FontAttributes="Bold" Grid.Column="22" FontSize="12" HorizontalOptions="Center"/>
+                                <Label Text="2200" FontAttributes="Bold" Grid.Column="23" FontSize="12" HorizontalOptions="Center"/>
+                                <Label Text="2300" FontAttributes="Bold" Grid.Column="24" FontSize="12" HorizontalOptions="Center"/>
+                                <Label Text="2400" FontAttributes="Bold" Grid.Column="25" FontSize="12" HorizontalOptions="Center"/>
+                                <Label Text="2500" FontAttributes="Bold" Grid.Column="26" FontSize="12" HorizontalOptions="Center"/>
+                            </Grid>
+                        </ScrollView>
 
-                    <ScrollView Orientation="Vertical" HeightRequest="300">
-                        <ScrollView x:Name="ContentScrollView1"
+                        <ScrollView Orientation="Vertical" HeightRequest="300">
+                            <ScrollView x:Name="ContentScrollView1"
                                 Orientation="Horizontal"
                                 Scrolled="OnContentHorizontalScroll1">
-                            <CollectionView ItemsSource="{Binding UsuariosResumen}">
-                                <CollectionView.ItemTemplate>
-                                    <DataTemplate>
-                                        <Grid ColumnDefinitions="200,260,50,100,100,60,50,70,60,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50"
+                                <CollectionView ItemsSource="{Binding UsuariosResumen}">
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid ColumnDefinitions="200,260,50,100,100,60,50,70,60,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50"
                                           Padding="5"
                                           VerticalOptions="Center"
                                           HorizontalOptions="Start">
-                                          
 
-                                            <BoxView Grid.ColumnSpan="27" Color="ForestGreen" HeightRequest="1" VerticalOptions="Start" Margin="-5"/>
-                                            <Label Text="{Binding Handle}" Grid.Column="0" FontSize="12"/>
-                                            <Label Text="{Binding FullName}" Grid.Column="1" FontSize="12 "/>
-                                            <Label Text="{Binding Curso}" Grid.Column="2" FontSize="12" HorizontalOptions="Center"/>
-                                            <Label Text="{Binding NombreEscuela}" Grid.Column="3" FontSize="12" HorizontalOptions="Center"/>
-                                            <Label Text="{Binding CurrentRating}" Grid.Column="4" FontSize="12" HorizontalOptions="Center"/>
-                                            <Label Text="{Binding TotalSolved}" Grid.Column="5" FontSize="12" HorizontalOptions="Center"/>
 
-                                            <Label Text="{Binding Team, StringFormat='{0}'}" Grid.Column="6" FontSize="12" HorizontalOptions="Center"/>
-                                            <Label Text="{Binding Individual, StringFormat='{0}'}" Grid.Column="7" FontSize="12" HorizontalOptions="Center"/>
+                                                <BoxView Grid.ColumnSpan="27" Color="#5211A6" HeightRequest="1" VerticalOptions="Start" Margin="-5"/>
+                                                <Label Text="{Binding Handle}" Grid.Column="0" FontSize="12"/>
+                                                <Label Text="{Binding FullName}" Grid.Column="1" FontSize="12 "/>
+                                                <Label Text="{Binding Curso}" Grid.Column="2" FontSize="12" HorizontalOptions="Center"/>
+                                                <Label Text="{Binding NombreEscuela}" Grid.Column="3" FontSize="12" HorizontalOptions="Center"/>
+                                                <Label Text="{Binding CurrentRating}" Grid.Column="4" FontSize="12" HorizontalOptions="Center"/>
+                                                <Label Text="{Binding TotalSolved}" Grid.Column="5" FontSize="12" HorizontalOptions="Center"/>
 
-                                            <Label Text="{Binding ProblemasPorDificultad[-1], StringFormat='{0}'}" Grid.Column="8" FontSize="12" HorizontalOptions="Center"/>
+                                                <Label Text="{Binding Team, StringFormat='{0}'}" Grid.Column="6" FontSize="12" HorizontalOptions="Center"/>
+                                                <Label Text="{Binding Individual, StringFormat='{0}'}" Grid.Column="7" FontSize="12" HorizontalOptions="Center"/>
 
-                                            <Label Text="{Binding ProblemasPorDificultad[800], StringFormat='{0}'}" Grid.Column="9" FontSize="12" HorizontalOptions="Center"/>
-                                            <Label Text="{Binding ProblemasPorDificultad[900], StringFormat='{0}'}" Grid.Column="10" FontSize="12" HorizontalOptions="Center"/>
-                                            <Label Text="{Binding ProblemasPorDificultad[1000], StringFormat='{0}'}" Grid.Column="11" FontSize="12" HorizontalOptions="Center"/>
-                                            <Label Text="{Binding ProblemasPorDificultad[1100], StringFormat='{0}'}" Grid.Column="12" FontSize="12" HorizontalOptions="Center"/>
-                                            <Label Text="{Binding ProblemasPorDificultad[1200], StringFormat='{0}'}" Grid.Column="13" FontSize="12" HorizontalOptions="Center"/>
-                                            <Label Text="{Binding ProblemasPorDificultad[1300], StringFormat='{0}'}" Grid.Column="14" FontSize="12" HorizontalOptions="Center"/>
-                                            <Label Text="{Binding ProblemasPorDificultad[1400], StringFormat='{0}'}" Grid.Column="15" FontSize="12" HorizontalOptions="Center"/>
-                                            <Label Text="{Binding ProblemasPorDificultad[1500], StringFormat='{0}'}" Grid.Column="16" FontSize="12" HorizontalOptions="Center"/>
-                                            <Label Text="{Binding ProblemasPorDificultad[1600], StringFormat='{0}'}" Grid.Column="17" FontSize="12" HorizontalOptions="Center"/>
-                                            <Label Text="{Binding ProblemasPorDificultad[1700], StringFormat='{0}'}" Grid.Column="18" FontSize="12" HorizontalOptions="Center"/>
-                                            <Label Text="{Binding ProblemasPorDificultad[1800], StringFormat='{0}'}" Grid.Column="19" FontSize="12" HorizontalOptions="Center"/>
-                                            <Label Text="{Binding ProblemasPorDificultad[1900], StringFormat='{0}'}" Grid.Column="20" FontSize="12" HorizontalOptions="Center"/>
-                                            <Label Text="{Binding ProblemasPorDificultad[2000], StringFormat='{0}'}" Grid.Column="21" FontSize="12" HorizontalOptions="Center"/>
-                                            <Label Text="{Binding ProblemasPorDificultad[2100], StringFormat='{0}'}" Grid.Column="22" FontSize="12" HorizontalOptions="Center"/>
-                                            <Label Text="{Binding ProblemasPorDificultad[2200], StringFormat='{0}'}" Grid.Column="23" FontSize="12" HorizontalOptions="Center"/>
-                                            <Label Text="{Binding ProblemasPorDificultad[2300], StringFormat='{0}'}" Grid.Column="24" FontSize="12" HorizontalOptions="Center"/>
-                                            <Label Text="{Binding ProblemasPorDificultad[2400], StringFormat='{0}'}" Grid.Column="25" FontSize="12" HorizontalOptions="Center"/>
-                                            <Label Text="{Binding ProblemasPorDificultad[2500], StringFormat='{0}'}" Grid.Column="26" FontSize="12" HorizontalOptions="Center"/>
-                                        </Grid>
-                                    </DataTemplate>
-                                </CollectionView.ItemTemplate>
-                            </CollectionView>
+                                                <Label Text="{Binding ProblemasPorDificultad[-1], StringFormat='{0}'}" Grid.Column="8" FontSize="12" HorizontalOptions="Center"/>
+
+                                                <Label Text="{Binding ProblemasPorDificultad[800], StringFormat='{0}'}" Grid.Column="9" FontSize="12" HorizontalOptions="Center"/>
+                                                <Label Text="{Binding ProblemasPorDificultad[900], StringFormat='{0}'}" Grid.Column="10" FontSize="12" HorizontalOptions="Center"/>
+                                                <Label Text="{Binding ProblemasPorDificultad[1000], StringFormat='{0}'}" Grid.Column="11" FontSize="12" HorizontalOptions="Center"/>
+                                                <Label Text="{Binding ProblemasPorDificultad[1100], StringFormat='{0}'}" Grid.Column="12" FontSize="12" HorizontalOptions="Center"/>
+                                                <Label Text="{Binding ProblemasPorDificultad[1200], StringFormat='{0}'}" Grid.Column="13" FontSize="12" HorizontalOptions="Center"/>
+                                                <Label Text="{Binding ProblemasPorDificultad[1300], StringFormat='{0}'}" Grid.Column="14" FontSize="12" HorizontalOptions="Center"/>
+                                                <Label Text="{Binding ProblemasPorDificultad[1400], StringFormat='{0}'}" Grid.Column="15" FontSize="12" HorizontalOptions="Center"/>
+                                                <Label Text="{Binding ProblemasPorDificultad[1500], StringFormat='{0}'}" Grid.Column="16" FontSize="12" HorizontalOptions="Center"/>
+                                                <Label Text="{Binding ProblemasPorDificultad[1600], StringFormat='{0}'}" Grid.Column="17" FontSize="12" HorizontalOptions="Center"/>
+                                                <Label Text="{Binding ProblemasPorDificultad[1700], StringFormat='{0}'}" Grid.Column="18" FontSize="12" HorizontalOptions="Center"/>
+                                                <Label Text="{Binding ProblemasPorDificultad[1800], StringFormat='{0}'}" Grid.Column="19" FontSize="12" HorizontalOptions="Center"/>
+                                                <Label Text="{Binding ProblemasPorDificultad[1900], StringFormat='{0}'}" Grid.Column="20" FontSize="12" HorizontalOptions="Center"/>
+                                                <Label Text="{Binding ProblemasPorDificultad[2000], StringFormat='{0}'}" Grid.Column="21" FontSize="12" HorizontalOptions="Center"/>
+                                                <Label Text="{Binding ProblemasPorDificultad[2100], StringFormat='{0}'}" Grid.Column="22" FontSize="12" HorizontalOptions="Center"/>
+                                                <Label Text="{Binding ProblemasPorDificultad[2200], StringFormat='{0}'}" Grid.Column="23" FontSize="12" HorizontalOptions="Center"/>
+                                                <Label Text="{Binding ProblemasPorDificultad[2300], StringFormat='{0}'}" Grid.Column="24" FontSize="12" HorizontalOptions="Center"/>
+                                                <Label Text="{Binding ProblemasPorDificultad[2400], StringFormat='{0}'}" Grid.Column="25" FontSize="12" HorizontalOptions="Center"/>
+                                                <Label Text="{Binding ProblemasPorDificultad[2500], StringFormat='{0}'}" Grid.Column="26" FontSize="12" HorizontalOptions="Center"/>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                                </CollectionView>
+                            </ScrollView>
                         </ScrollView>
-                    </ScrollView>
-                </VerticalStackLayout>
-            </Frame>
+                    </VerticalStackLayout>
+                </Frame>
 
-            <!-- Tabla de problemas por semana -->
-            <Frame>
-                <VerticalStackLayout Spacing="10">
-                    <Label Text="Problemas Realizados por Semana" FontAttributes="Bold" FontSize="16"/>
+                <!-- Tabla de problemas por semana -->
+                <Frame HeightRequest="380" WidthRequest="1100">
+                    <VerticalStackLayout Spacing="0">
+                        <Label Text="Problemas Realizados (Semana)" FontAttributes="Bold" FontSize="16"/>
 
-                    <ScrollView x:Name="HeaderScrollView2"
+                        <ScrollView x:Name="HeaderScrollView2"
                             Orientation="Horizontal"
                             IsEnabled="{Binding EncabezadosHabilitados}"
                             Scrolled="OnHeaderScrollViewScrolled2"
                             HorizontalScrollBarVisibility="Never">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="200"/>
-                                <ColumnDefinition Width="260"/>
-                                <ColumnDefinition Width="50"/>
-                                <ColumnDefinition Width="100"/>
-                                <ColumnDefinition Width="100"/>
-                                <ColumnDefinition Width="60"/>
-                                <ColumnDefinition Width="Auto"/>
-                            </Grid.ColumnDefinitions>
+                            <Grid Padding="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="200"/>
+                                    <ColumnDefinition Width="260"/>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="60"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
 
-                            <Label Text="Usuario" Grid.Column="0" FontAttributes="Bold" FontSize="12"/>
-                            <Label Text="Nombre" Grid.Column="1" FontAttributes="Bold" FontSize="12"/>
-                            <Label Text="Curso" Grid.Column="2" FontAttributes="Bold" FontSize="12" HorizontalOptions="Center"/>
-                            <Label Text="Escuela" Grid.Column="3" FontAttributes="Bold" FontSize="12" HorizontalOptions="Center"/>
-                            <Label Text="Rating" Grid.Column="4" FontAttributes="Bold" FontSize="12" HorizontalOptions="Center"/>
-                            <Label Text="Solved" Grid.Column="5" FontAttributes="Bold" FontSize="12" HorizontalOptions="Center"/>
+                                <Label Text="Usuario" Grid.Column="0" FontAttributes="Bold" FontSize="12"/>
+                                <Label Text="Nombre" Grid.Column="1" FontAttributes="Bold" FontSize="12"/>
+                                <Label Text="Curso" Grid.Column="2" FontAttributes="Bold" FontSize="12" HorizontalOptions="Center"/>
+                                <Label Text="Escuela" Grid.Column="3" FontAttributes="Bold" FontSize="12" HorizontalOptions="Center"/>
+                                <Label Text="Rating" Grid.Column="4" FontAttributes="Bold" FontSize="12" HorizontalOptions="Center"/>
+                                <Label Text="Solved" Grid.Column="5" FontAttributes="Bold" FontSize="12" HorizontalOptions="Center"/>
 
-                            <FlexLayout Grid.Column="6"
+                                <FlexLayout Grid.Column="6"
                                     Direction="Row"
                                     AlignItems="Center"
                                     BindableLayout.ItemsSource="{Binding EncabezadosSemanas}">
-                                <BindableLayout.ItemTemplate>
-                                    <DataTemplate>
-                                        <Label Text="{Binding}"
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate>
+                                            <Label Text="{Binding}"
                                        WidthRequest="100"
                                        FontAttributes="Bold"
                                        FontSize="12"
                                        HorizontalTextAlignment="Center"
                                        Margin="0,0,10,0"/>
-                                    </DataTemplate>
-                                </BindableLayout.ItemTemplate>
-                            </FlexLayout>
-                        </Grid>
-                    </ScrollView>
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </FlexLayout>
+                            </Grid>
+                        </ScrollView>
 
-                    <ScrollView Orientation="Vertical" HeightRequest="300">
-                        <ScrollView x:Name="ContentScrollView2"
+                        <ScrollView Orientation="Vertical" HeightRequest="300">
+                            <ScrollView x:Name="ContentScrollView2"
                                 Orientation="Horizontal"
                                 Scrolled="OnContentHorizontalScroll2">
-                            <CollectionView ItemsSource="{Binding UsuariosResumen}">
-                                <CollectionView.ItemTemplate>
-                                    <DataTemplate>
-                                        <Grid Padding="5"
+                                <CollectionView ItemsSource="{Binding UsuariosResumen}">
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid Padding="5"
                                               VerticalOptions="Center">
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="200"/>
-                                                <ColumnDefinition Width="260"/>
-                                                <ColumnDefinition Width="50"/>
-                                                <ColumnDefinition Width="100"/>
-                                                <ColumnDefinition Width="100"/>
-                                                <ColumnDefinition Width="60"/>
-                                                <ColumnDefinition Width="Auto"/>
-                                            </Grid.ColumnDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="200"/>
+                                                    <ColumnDefinition Width="260"/>
+                                                    <ColumnDefinition Width="50"/>
+                                                    <ColumnDefinition Width="100"/>
+                                                    <ColumnDefinition Width="100"/>
+                                                    <ColumnDefinition Width="60"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                </Grid.ColumnDefinitions>
 
-                                            <BoxView Grid.ColumnSpan="27" Color="ForestGreen" HeightRequest="1" VerticalOptions="Start" Margin="-5"/>
-                                            <Label Text="{Binding Handle}" Grid.Column="0" FontSize="12"/>
-                                            <Label Text="{Binding FullName}" Grid.Column="1" FontSize="12"/>
-                                            <Label Text="{Binding Curso}" Grid.Column="2" FontSize="12" HorizontalOptions="Center"/>
-                                            <Label Text="{Binding NombreEscuela}" Grid.Column="3" FontSize="12" HorizontalOptions="Center"/>
-                                            <Label Text="{Binding CurrentRating}" Grid.Column="4" FontSize="12" HorizontalOptions="Center"/>
-                                            <Label Text="{Binding TotalSolved}" Grid.Column="5" FontSize="12" HorizontalOptions="Center"/>
+                                                <BoxView Grid.ColumnSpan="27" Color="#5211A6" HeightRequest="1" VerticalOptions="Start" Margin="-5"/>
+                                                <Label Text="{Binding Handle}" Grid.Column="0" FontSize="12"/>
+                                                <Label Text="{Binding FullName}" Grid.Column="1" FontSize="12"/>
+                                                <Label Text="{Binding Curso}" Grid.Column="2" FontSize="12" HorizontalOptions="Center"/>
+                                                <Label Text="{Binding NombreEscuela}" Grid.Column="3" FontSize="12" HorizontalOptions="Center"/>
+                                                <Label Text="{Binding CurrentRating}" Grid.Column="4" FontSize="12" HorizontalOptions="Center"/>
+                                                <Label Text="{Binding TotalSolved}" Grid.Column="5" FontSize="12" HorizontalOptions="Center"/>
 
-                                            <FlexLayout Grid.Column="6"
+                                                <FlexLayout Grid.Column="6"
                                                     Direction="Row"
                                                     AlignItems="Center"
                                                     BindableLayout.ItemsSource="{Binding ProblemasPorSemana}">
-                                                <BindableLayout.ItemTemplate>
-                                                    <DataTemplate>
-                                                        <Label Text="{Binding .}"
+                                                    <BindableLayout.ItemTemplate>
+                                                        <DataTemplate>
+                                                            <Label Text="{Binding .}"
                                                            WidthRequest="100"
                                                            FontSize="12"
                                                            HorizontalTextAlignment="Center"
                                                            Margin="0,0,10,0"/>
-                                                    </DataTemplate>
-                                                </BindableLayout.ItemTemplate>
-                                            </FlexLayout>
-                                        </Grid>
-                                    </DataTemplate>
-                                </CollectionView.ItemTemplate>
-                            </CollectionView>
+                                                        </DataTemplate>
+                                                    </BindableLayout.ItemTemplate>
+                                                </FlexLayout>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                                </CollectionView>
+                            </ScrollView>
                         </ScrollView>
-                    </ScrollView>
-                </VerticalStackLayout>
-            </Frame>
+                    </VerticalStackLayout>
+                </Frame>
 
-            <!-- Botones de exportación -->
-            <HorizontalStackLayout Spacing="20" HorizontalOptions="End">
-                <Button Text="Exportar CSV"
+                <!-- Botones de exportación -->
+                <HorizontalStackLayout Spacing="10" HorizontalOptions="Start">
+                    <Button Text="Exportar CSV"
+                        BackgroundColor="#6C9DEB"
+                            HeightRequest="20"
+                            WidthRequest="135"
                         Command="{Binding ExportarCsvCommand}"
                         Style="{StaticResource SecondaryButton}"/>
 
-                <Button Text="Exportar a Excel"
+                    <Button Text="Exportar a Excel"
+                        Background="#356B53"
+                            HeightRequest="20"
+                            WidthRequest="135"
                         Command="{Binding ExportarExcelCommand}" 
-                        Style="{StaticResource PrimaryButton}"/>
-            </HorizontalStackLayout>
-        </VerticalStackLayout>
-    </ScrollView>
+                        Style="{StaticResource SecondaryButton}"/>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Spacing="8">
+                <!-- Filtros de fecha -->
+                <Frame WidthRequest="390">
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="Rango de fechas" FontAttributes="Bold" Scale="0.95"/>
+
+                        <HorizontalStackLayout Spacing="10" HorizontalOptions="Start">
+
+                            <Label Scale="0.9" Text="Del" VerticalOptions="Center" Padding="10,0,0,0"></Label>
+                            <DatePicker Scale="1" Date="{Binding FechaInicio}"
+        WidthRequest="120"
+        HorizontalOptions="Center"/>
+                            <Label Scale="0.9" Text="al" 
+   VerticalOptions="Center"/>
+                            <DatePicker Scale="1" Date="{Binding FechaFin}"  
+        WidthRequest="120"
+        HorizontalOptions="Center"/>
+                        </HorizontalStackLayout>
+
+
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Frame HeightRequest="480" WidthRequest="390">
+                    <ScrollView Orientation="Vertical">
+                        <Grid ColumnDefinitions="*,*" ColumnSpacing="20">
+                            <!-- Columna izquierda: Nivel de Rating -->
+                            <VerticalStackLayout Grid.Column="1">
+                                <Label Text="Nivel de Rating" FontAttributes="Bold" Scale="0.95" Padding="5,0,0,0"/>
+
+                                <Grid ColumnDefinitions="35, *">
+                                    <CheckBox Grid.Column="0" IsChecked="{Binding Filtros.Newbie}" IsEnabled="{Binding IsFiltrable}" Scale="0.65"/>
+                                    <Label Grid.Column="1" Text="Newbie (0-1199)" VerticalOptions="Center" Scale="0.9"/>
+                                </Grid>
+
+                                <Grid ColumnDefinitions="35, *">
+                                    <CheckBox Grid.Column="0" IsChecked="{Binding Filtros.Pupil}" IsEnabled="{Binding IsFiltrable}" Scale="0.65"/>
+                                    <Label Grid.Column="1" Text="Pupil (1200-1399)" VerticalOptions="Center" Scale="0.9"/>
+                                </Grid>
+
+                                <Grid ColumnDefinitions="35, *">
+                                    <CheckBox Grid.Column="0" IsChecked="{Binding Filtros.Specialist}" IsEnabled="{Binding IsFiltrable}" Scale="0.65"/>
+                                    <Label Grid.Column="1" Text="Specialist (1400-1599)" VerticalOptions="Center" Scale="0.9"/>
+                                </Grid>
+
+                                <Grid ColumnDefinitions="35, *">
+                                    <CheckBox Grid.Column="0" IsChecked="{Binding Filtros.Expert}" IsEnabled="{Binding IsFiltrable}" Scale="0.65"/>
+                                    <Label Grid.Column="1" Text="Expert (1600-1899)" VerticalOptions="Center" Scale="0.9"/>
+                                </Grid>
+
+                                <Grid ColumnDefinitions="35, *">
+                                    <CheckBox Grid.Column="0" IsChecked="{Binding Filtros.CandidateMaster}" IsEnabled="{Binding IsFiltrable}" Scale="0.65"/>
+                                    <Label Grid.Column="1" Text="Candidate Master (1900-2099)" VerticalOptions="Center" Scale="0.9"/>
+                                </Grid>
+
+                                <Grid ColumnDefinitions="35, *">
+                                    <CheckBox Grid.Column="0" IsChecked="{Binding Filtros.Master}" IsEnabled="{Binding IsFiltrable}" Scale="0.65"/>
+                                    <Label Grid.Column="1" Text="Master (2100-2299)" VerticalOptions="Center" Scale="0.9"/>
+                                </Grid>
+
+                                <Grid ColumnDefinitions="35, *">
+                                    <CheckBox Grid.Column="0" IsChecked="{Binding Filtros.InternationalMaster}" IsEnabled="{Binding IsFiltrable}" Scale="0.65"/>
+                                    <Label Grid.Column="1" Text="International Master (2300-2399)" VerticalOptions="Center" Scale="0.9"/>
+                                </Grid>
+
+                                <Grid ColumnDefinitions="35, *">
+                                    <CheckBox Grid.Column="0" IsChecked="{Binding Filtros.GrandMaster}" IsEnabled="{Binding IsFiltrable}" Scale="0.65"/>
+                                    <Label Grid.Column="1" Text="Grandmaster (2400-2599)" VerticalOptions="Center" Scale="0.9"/>
+                                </Grid>
+
+                                <Grid ColumnDefinitions="35, *">
+                                    <CheckBox Grid.Column="0" IsChecked="{Binding Filtros.InternationalGrandMaster}" IsEnabled="{Binding IsFiltrable}" Scale="0.65"/>
+                                    <Label Grid.Column="1" Text="Intl Grandmaster (2600-2999)" VerticalOptions="Center" Scale="0.9"/>
+                                </Grid>
+
+                                <Grid ColumnDefinitions="35, *">
+                                    <CheckBox Grid.Column="0" IsChecked="{Binding Filtros.LegendaryGrandMaster}" IsEnabled="{Binding IsFiltrable}" Scale="0.65"/>
+                                    <Label Grid.Column="1" Text="Legendary Grandmaster (≥3000)" VerticalOptions="Center" Scale="0.9"/>
+                                </Grid>
+                            </VerticalStackLayout>
+
+                            <!-- Columna derecha: Cursos, Género, Categoría, Escuelas, Modo de Filtro, Ordenamiento -->
+                            <VerticalStackLayout Grid.Column="0">
+                                <!-- Cursos -->
+                                <VerticalStackLayout >
+                                    <Label Text="Cursos" FontAttributes="Bold" Scale="0.95" Padding="5,0,0,0"/>
+                                    <Grid ColumnDefinitions="35, *">
+                                        <CheckBox Grid.Column="0" Scale="0.65" VerticalOptions="Center"
+                                  IsChecked="{Binding Filtros.Curso1Seleccionado}" IsEnabled="{Binding IsFiltrable}" />
+                                        <Label Grid.Column="1" Text="Curso 1" VerticalOptions="Center" Scale="0.9"/>
+                                    </Grid>
+                                    <Grid ColumnDefinitions="35, *">
+                                        <CheckBox Grid.Column="0" Scale="0.65" VerticalOptions="Center"
+                                  IsChecked="{Binding Filtros.Curso2Seleccionado}" IsEnabled="{Binding IsFiltrable}" />
+                                        <Label Grid.Column="1" Text="Curso 2" VerticalOptions="Center" Scale="0.9"/>
+                                    </Grid>
+                                    <Grid ColumnDefinitions="35, *">
+                                        <CheckBox Grid.Column="0" Scale="0.65" VerticalOptions="Center"
+                                  IsChecked="{Binding Filtros.Curso3Seleccionado}" IsEnabled="{Binding IsFiltrable}" />
+                                        <Label Grid.Column="1" Text="Curso 3" VerticalOptions="Center" Scale="0.9"/>
+                                    </Grid>
+                                </VerticalStackLayout>
+
+                                <!-- Género -->
+                                <VerticalStackLayout Spacing="5">
+                                    <Label Text="Género" FontAttributes="Bold" Scale="0.95" Padding="5,0,0,0"/>
+                                    <Grid ColumnDefinitions="35, *">
+                                        <CheckBox Grid.Column="0" IsChecked="{Binding Filtros.Hombres}" IsEnabled="{Binding IsFiltrable}" Scale="0.65"/>
+                                        <Label Grid.Column="1" Text="Hombres" VerticalOptions="Center" Scale="0.9"/>
+                                    </Grid>
+                                    <Grid ColumnDefinitions="35, *">
+                                        <CheckBox Grid.Column="0" IsChecked="{Binding Filtros.Mujeres}" IsEnabled="{Binding IsFiltrable}" Scale="0.65"/>
+                                        <Label Grid.Column="1" Text="Mujeres" VerticalOptions="Center" Scale="0.9"/>
+                                    </Grid>
+                                </VerticalStackLayout>
+
+                                <!-- Categoría -->
+                                <VerticalStackLayout Spacing="5">
+                                    <Label Text="Categoría" FontAttributes="Bold" Scale="0.95" Padding="5,0,0,0"/>
+                                    <Grid ColumnDefinitions="35, *">
+                                        <CheckBox Grid.Column="0" IsChecked="{Binding Filtros.Icpc}" IsEnabled="{Binding IsFiltrable}" Scale="0.65"/>
+                                        <Label Grid.Column="1" Text="ICPC" VerticalOptions="Center" Scale="0.9"/>
+                                    </Grid>
+                                    <Grid ColumnDefinitions="35, *">
+                                        <CheckBox Grid.Column="0" IsChecked="{Binding Filtros.Excelente}" IsEnabled="{Binding IsFiltrable}" Scale="0.65"/>
+                                        <Label Grid.Column="1" Text="Excelente" VerticalOptions="Center" Scale="0.9"/>
+                                    </Grid>
+                                    <Grid ColumnDefinitions="35, *">
+                                        <CheckBox Grid.Column="0" IsChecked="{Binding Filtros.Normal}" IsEnabled="{Binding IsFiltrable}" Scale="0.65"/>
+                                        <Label Grid.Column="1" Text="Normal" VerticalOptions="Center" Scale="0.9"/>
+                                    </Grid>
+                                    <Grid ColumnDefinitions="35, *">
+                                        <CheckBox Grid.Column="0" IsChecked="{Binding Filtros.Riesgo}" IsEnabled="{Binding IsFiltrable}" Scale="0.65"/>
+                                        <Label Grid.Column="1" Text="Riesgo" VerticalOptions="Center" Scale="0.9"/>
+                                    </Grid>
+                                </VerticalStackLayout>
+
+                                <!-- Escuelas -->
+                                <VerticalStackLayout Spacing="5">
+                                    <Label Text="Escuelas" FontAttributes="Bold" Scale="0.95" Padding="5,0,0,0"/>
+                                    <CollectionView ItemsSource="{Binding EscuelasDisponibles}" HeightRequest="150">
+                                        <CollectionView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid ColumnDefinitions="35, *" VerticalOptions="Center">
+                                                    <CheckBox Grid.Column="0" IsChecked="{Binding EstaSeleccionada}" Scale="0.65"
+                                              IsEnabled="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.IsFiltrable}" />
+                                                    <Label Grid.Column="1" Text="{Binding Nombre}" VerticalOptions="Center" Scale="0.9"/>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </CollectionView.ItemTemplate>
+                                    </CollectionView>
+                                </VerticalStackLayout>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </ScrollView>
+                </Frame>
+
+
+
+                <HorizontalStackLayout WidthRequest="390" Spacing="15" >
+
+
+                    <Frame WidthRequest="130">
+                        <VerticalStackLayout Spacing="5">
+                            <Label Text="Sorting" FontAttributes="Bold" Scale="0.95"/>
+
+                            <Picker Title="Ordenar Por..." Scale="0.8"
+                HorizontalOptions="Start"
+                ItemsSource="{Binding SortFields}" SelectedItem="{Binding SelectedSortField}" />
+
+                            <Picker Title="Orden..." Scale="0.8"
+                ItemsSource="{Binding SortDirections}" SelectedItem="{Binding SelectedSortDirection}" />
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <VerticalStackLayout Spacing="15" WidthRequest="245">
+
+                        <Frame HeightRequest="120" VerticalOptions="Start">
+                            <VerticalStackLayout Spacing="5">
+                                <Label Text="Tipo de Filtro" FontAttributes="Bold" Scale="0.95"/>
+                                <RadioButton Content="Estático" GroupName="ModoFiltro"
+                                             IsChecked="{Binding ModoFiltroSeleccionado}"
+                                             IsEnabled="{Binding IsFiltrable}" Scale="0.8" />
+
+                                <RadioButton Content="Dinámico" GroupName="ModoFiltro"
+                                             
+                                             IsChecked="{Binding ModoFiltroSeleccionado, Converter={StaticResource InverseBoolConverter}}"
+                                             IsEnabled="{Binding IsFiltrable}" Scale="0.8" />
+                            </VerticalStackLayout>
+
+
+
+                        </Frame>
+
+                        <VerticalStackLayout HorizontalOptions="Center" Spacing="5">
+                            <Button Text="Cargar Datos" 
+                                    HeightRequest="20"
+                                    Background="#5211A6"
+                                    
+Command="{Binding CargarResumenUsuariosCommand}"
+WidthRequest="240"
+Style="{StaticResource PrimaryButton}"/>
+
+                            <Button Text="Filtrar Datos" 
+                                    HeightRequest="20"
+                                    BackgroundColor="#7E57C2"
+Command="{Binding AplicarFiltrosEstaticosCommand}"
+IsEnabled="{Binding ModoFiltroSeleccionado}"
+WidthRequest="240"
+Style="{StaticResource SecondaryButton}"/>
+                        </VerticalStackLayout>
+
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+
+
+
+            </VerticalStackLayout>
+        </HorizontalStackLayout>
+    </StackLayout>
 </ContentPage>
