@@ -3,12 +3,100 @@
   "WorkspaceRootPath": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\services\\dbservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\services\\dbservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\services\\cfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\services\\cfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\views\\dashboardpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\views\\dashboardpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\views\\dashboardpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\views\\dashboardpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\viewmodels\\alumnosviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\viewmodels\\alumnosviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\views\\alumnospage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\views\\alumnospage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\models\\userprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\models\\userprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\views\\alumnospage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\views\\alumnospage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\views\\alumnodetallepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\views\\alumnodetallepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\models\\userstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\models\\userstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\models\\problemstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\models\\problemstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\viewmodels\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\viewmodels\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\viewmodels\\configuracionviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\viewmodels\\configuracionviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\viewmodels\\alumnodetalleviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\viewmodels\\alumnodetalleviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\services\\dashboardfilterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\services\\dashboardfilterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\models\\conteststats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\models\\conteststats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\services\\dashboardsortservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\services\\dashboardsortservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\models\\escuela.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\models\\escuela.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\views\\configuracionpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\views\\configuracionpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\viewmodels\\comparativaviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\viewmodels\\comparativaviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\viewmodels\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\viewmodels\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\views\\comparativapage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\views\\comparativapage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\services\\taskextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\services\\taskextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\services\\inverseboolconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|solutionrelative:erizoscf\\services\\inverseboolconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{000DBD57-6FD2-43AA-B7A8-14ED52498ABE}|ErizosCF\\ErizosCF.csproj|c:\\users\\nopes\\source\\repos\\erizoscf\\erizoscf\\resources\\styles\\colors.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -22,11 +110,300 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DashBoardPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Views\\DashBoardPage.xaml.cs",
+              "RelativeDocumentMoniker": "ErizosCF\\Views\\DashBoardPage.xaml.cs",
+              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Views\\DashBoardPage.xaml.cs",
+              "RelativeToolTip": "ErizosCF\\Views\\DashBoardPage.xaml.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T18:13:08.052Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UserStats.cs",
+              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Models\\UserStats.cs",
+              "RelativeDocumentMoniker": "ErizosCF\\Models\\UserStats.cs",
+              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Models\\UserStats.cs",
+              "RelativeToolTip": "ErizosCF\\Models\\UserStats.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T20:37:04.015Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserProfile.cs",
+              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Models\\UserProfile.cs",
+              "RelativeDocumentMoniker": "ErizosCF\\Models\\UserProfile.cs",
+              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Models\\UserProfile.cs",
+              "RelativeToolTip": "ErizosCF\\Models\\UserProfile.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAmwGgAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T20:37:05.471Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AlumnoDetallePage.xaml",
+              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Views\\AlumnoDetallePage.xaml",
+              "RelativeDocumentMoniker": "ErizosCF\\Views\\AlumnoDetallePage.xaml",
+              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Views\\AlumnoDetallePage.xaml",
+              "RelativeToolTip": "ErizosCF\\Views\\AlumnoDetallePage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-03T21:16:53.333Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CFService.cs",
+              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Services\\CFService.cs",
+              "RelativeDocumentMoniker": "ErizosCF\\Services\\CFService.cs",
+              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Services\\CFService.cs",
+              "RelativeToolTip": "ErizosCF\\Services\\CFService.cs",
+              "ViewState": "AgIAAH0AAAAAAAAAAAAiwKcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-01T17:22:02.152Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "DashBoardPage.xaml",
+              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Views\\DashBoardPage.xaml",
+              "RelativeDocumentMoniker": "ErizosCF\\Views\\DashBoardPage.xaml",
+              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Views\\DashBoardPage.xaml",
+              "RelativeToolTip": "ErizosCF\\Views\\DashBoardPage.xaml",
+              "ViewState": "AgIAAMkBAAAAAAAAAADwv/EBAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-07-31T15:05:38.21Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DBServices.cs",
+              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Services\\DBServices.cs",
+              "RelativeDocumentMoniker": "ErizosCF\\Services\\DBServices.cs",
+              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Services\\DBServices.cs",
+              "RelativeToolTip": "ErizosCF\\Services\\DBServices.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAuwD4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T21:14:11.821Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AlumnosViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\ViewModels\\AlumnosViewModel.cs",
+              "RelativeDocumentMoniker": "ErizosCF\\ViewModels\\AlumnosViewModel.cs",
+              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\ViewModels\\AlumnosViewModel.cs",
+              "RelativeToolTip": "ErizosCF\\ViewModels\\AlumnosViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T20:37:20.672Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DashBoardViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\ViewModels\\DashBoardViewModel.cs",
+              "RelativeDocumentMoniker": "ErizosCF\\ViewModels\\DashBoardViewModel.cs",
+              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\ViewModels\\DashBoardViewModel.cs",
+              "RelativeToolTip": "ErizosCF\\ViewModels\\DashBoardViewModel.cs",
+              "ViewState": "AgIAACkCAAAAAAAAAAAiwDkCAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T18:13:07.24Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AlumnosPage.xaml",
+              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Views\\AlumnosPage.xaml",
+              "RelativeDocumentMoniker": "ErizosCF\\Views\\AlumnosPage.xaml",
+              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Views\\AlumnosPage.xaml",
+              "RelativeToolTip": "ErizosCF\\Views\\AlumnosPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-02-19T18:19:07.433Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AlumnosPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Views\\AlumnosPage.xaml.cs",
+              "RelativeDocumentMoniker": "ErizosCF\\Views\\AlumnosPage.xaml.cs",
+              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Views\\AlumnosPage.xaml.cs",
+              "RelativeToolTip": "ErizosCF\\Views\\AlumnosPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T18:38:14.388Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ConfiguracionViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\ViewModels\\ConfiguracionViewModel.cs",
+              "RelativeDocumentMoniker": "ErizosCF\\ViewModels\\ConfiguracionViewModel.cs",
+              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\ViewModels\\ConfiguracionViewModel.cs",
+              "RelativeToolTip": "ErizosCF\\ViewModels\\ConfiguracionViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T20:36:49.988Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ProblemStats.cs",
+              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Models\\ProblemStats.cs",
+              "RelativeDocumentMoniker": "ErizosCF\\Models\\ProblemStats.cs",
+              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Models\\ProblemStats.cs",
+              "RelativeToolTip": "ErizosCF\\Models\\ProblemStats.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAA1wA4AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T20:36:59.78Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "DashboardFilterService.cs",
+              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Services\\DashboardFilterService.cs",
+              "RelativeDocumentMoniker": "ErizosCF\\Services\\DashboardFilterService.cs",
+              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Services\\DashboardFilterService.cs",
+              "RelativeToolTip": "ErizosCF\\Services\\DashboardFilterService.cs",
+              "ViewState": "AgIAAJkAAAAAAAAAAAAAAK4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T21:13:55.968Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AlumnoDetalleViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\ViewModels\\AlumnoDetalleViewModel.cs",
+              "RelativeDocumentMoniker": "ErizosCF\\ViewModels\\AlumnoDetalleViewModel.cs",
+              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\ViewModels\\AlumnoDetalleViewModel.cs",
+              "RelativeToolTip": "ErizosCF\\ViewModels\\AlumnoDetalleViewModel.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T21:15:19.295Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ContestStats.cs",
+              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Models\\ContestStats.cs",
+              "RelativeDocumentMoniker": "ErizosCF\\Models\\ContestStats.cs",
+              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Models\\ContestStats.cs",
+              "RelativeToolTip": "ErizosCF\\Models\\ContestStats.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T21:11:42.462Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "DashBoardSortService.cs",
+              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Services\\DashBoardSortService.cs",
+              "RelativeDocumentMoniker": "ErizosCF\\Services\\DashBoardSortService.cs",
+              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Services\\DashBoardSortService.cs",
+              "RelativeToolTip": "ErizosCF\\Services\\DashBoardSortService.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAowF8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T21:14:04.968Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Escuela.cs",
+              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Models\\Escuela.cs",
+              "RelativeDocumentMoniker": "ErizosCF\\Models\\Escuela.cs",
+              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Models\\Escuela.cs",
+              "RelativeToolTip": "ErizosCF\\Models\\Escuela.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T21:11:55.189Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ConfiguracionPage.xaml",
+              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Views\\ConfiguracionPage.xaml",
+              "RelativeDocumentMoniker": "ErizosCF\\Views\\ConfiguracionPage.xaml",
+              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Views\\ConfiguracionPage.xaml",
+              "RelativeToolTip": "ErizosCF\\Views\\ConfiguracionPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-03T21:18:05.863Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ComparativaViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\ViewModels\\ComparativaViewModel.cs",
+              "RelativeDocumentMoniker": "ErizosCF\\ViewModels\\ComparativaViewModel.cs",
+              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\ViewModels\\ComparativaViewModel.cs",
+              "RelativeToolTip": "ErizosCF\\ViewModels\\ComparativaViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T20:37:30.35Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "BaseViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\ViewModels\\BaseViewModel.cs",
+              "RelativeDocumentMoniker": "ErizosCF\\ViewModels\\BaseViewModel.cs",
+              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\ViewModels\\BaseViewModel.cs",
+              "RelativeToolTip": "ErizosCF\\ViewModels\\BaseViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T20:37:25.724Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ComparativaPage.xaml",
+              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Views\\ComparativaPage.xaml",
+              "RelativeDocumentMoniker": "ErizosCF\\Views\\ComparativaPage.xaml",
+              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Views\\ComparativaPage.xaml",
+              "RelativeToolTip": "ErizosCF\\Views\\ComparativaPage.xaml",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAgwIoAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-10-31T20:35:46.543Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "TaskExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Services\\TaskExtensions.cs",
+              "RelativeDocumentMoniker": "ErizosCF\\Services\\TaskExtensions.cs",
+              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Services\\TaskExtensions.cs",
+              "RelativeToolTip": "ErizosCF\\Services\\TaskExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T21:14:32.687Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "InverseBoolConverter.cs",
+              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Services\\InverseBoolConverter.cs",
+              "RelativeDocumentMoniker": "ErizosCF\\Services\\InverseBoolConverter.cs",
+              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Services\\InverseBoolConverter.cs",
+              "RelativeToolTip": "ErizosCF\\Services\\InverseBoolConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T21:14:24.541Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
               "Title": "Colors.xaml",
               "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Resources\\Styles\\Colors.xaml",
               "RelativeDocumentMoniker": "ErizosCF\\Resources\\Styles\\Colors.xaml",
@@ -34,34 +411,7 @@
               "RelativeToolTip": "ErizosCF\\Resources\\Styles\\Colors.xaml",
               "ViewState": "AgIAAAIAAAAAAAAAAAAAABIAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-01T02:44:58.932Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DashBoardPage.xaml",
-              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Views\\DashBoardPage.xaml",
-              "RelativeDocumentMoniker": "ErizosCF\\Views\\DashBoardPage.xaml",
-              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\Views\\DashBoardPage.xaml",
-              "RelativeToolTip": "ErizosCF\\Views\\DashBoardPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-07-31T15:05:38.21Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DashBoardViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\ViewModels\\DashBoardViewModel.cs",
-              "RelativeDocumentMoniker": "ErizosCF\\ViewModels\\DashBoardViewModel.cs",
-              "ToolTip": "C:\\Users\\nopes\\source\\repos\\ErizosCF\\ErizosCF\\ViewModels\\DashBoardViewModel.cs",
-              "RelativeToolTip": "ErizosCF\\ViewModels\\DashBoardViewModel.cs",
-              "ViewState": "AgIAAFsAAAAAAAAAAAAYwLgAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-31T15:05:33.014Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-01T02:44:58.932Z"
             }
           ]
         }

@@ -314,6 +314,8 @@ namespace ErizosCF.ViewModels
                     if (Filtros.Normal) estadoSeleccionado.Add("NORMAL");
                     if (Filtros.Riesgo) estadoSeleccionado.Add("RIESGO");
 
+
+                    // esto a veces truena, por alguna razón...
                     var escuelasSeleccionadas = EscuelasDisponibles
                         .Where(e => e.EstaSeleccionada)
                         .Select(e => e.Id)

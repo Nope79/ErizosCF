@@ -8,51 +8,20 @@ using System.Threading.Tasks;
 
 namespace ErizosCF.ViewModels
 {
-    public partial class AlumnosViewModel : BaseViewModel
+    public partial class AlumnosViewModel : ObservableObject
     {
-        private readonly CFService _cfService;
-
         [ObservableProperty]
-        ObservableCollection<UserProfile> alumnos;
-
-        [ObservableProperty]
-        string filtro;
+        ObservableCollection<UserProfile> alumnos = new();
 
         public AlumnosViewModel()
         {
-            Title = "Alumnos";
-            _cfService = new CFService();
-            //Alumnos = new ObservableCollection<UserProfile>();
-            _ = LoadAlumnosAsync();
+            CargarAlumnosAsync();
         }
 
-        public async Task LoadAlumnosAsync()
+        private async void CargarAlumnosAsync()
         {
-            IsBusy = true;
-
-
-            IsBusy = false;
-        }
-
-        //[ICommand]
-        void Buscar()
-        {
-            //if (string.IsNullOrWhiteSpace(Filtro))
-            {
-                // Recargar todos o no filtrar
-                _ = LoadAlumnosAsync();
-                return;
-            }
-
-            //var filtroLower = Filtro.ToLower();
-
-            //var filtrados = Alumnos.Where(a =>
-                //a.Nombre.ToLower().Contains(filtroLower) ||
-                //a.Handle.ToLower().Contains(filtroLower)).ToList();
-
-           // Alumnos.Clear();
-            //foreach (var f in filtrados)
-               // Alumnos.Add(f);
+            var lista = await UserProfile.ObtenerTodosUsuariosAsync();
+            Alumnos = new ObservableCollection<UserProfile>(lista);
         }
     }
 }

@@ -12,7 +12,7 @@ namespace ErizosCF.Services
             var server = Environment.GetEnvironmentVariable("erizoscf_db_server");
             var user = Environment.GetEnvironmentVariable("erizoscf_db_user");
             var password = Environment.GetEnvironmentVariable("erizoscf_db_password");
-            var database = Environment.GetEnvironmentVariable("erizoscf_db_name");
+            var database = Environment.GetEnvironmentVariable("erizoscfDesktop_db_name");
 
             _connectionString = $"server={server};user={user};password={password};database={database};";
         }

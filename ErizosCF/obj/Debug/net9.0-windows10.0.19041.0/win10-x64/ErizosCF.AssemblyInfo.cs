@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ErizosCF")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+ab0a68f293904a293eb140f6ce4fd4c4c4540283")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+617be073c4668955fc2b5486f7554534246eee4c")]
 [assembly: System.Reflection.AssemblyProductAttribute("ErizosCF")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ErizosCF")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
